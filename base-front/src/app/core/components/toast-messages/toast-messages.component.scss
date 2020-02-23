@@ -1,0 +1,32 @@
+$blue: #009FB7;
+.toast-container {
+    border: 1px solid;
+    padding: 15px;
+    margin:15px 25px;
+    text-align: start;
+    position: absolute;
+    color: #EFF1F3;
+    top: 0;
+    right: 0;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.toast-info {
+    background-color: #009FB7;
+    border-color: #009FB7;
+}
+
+.toast-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.toast-danger {
+    background-color:#dc3545;
+    border-color: #dc3545;
+}
+
+.toast-warning {
+    background-color: #FED766;
+    border-color: #FED766;
+}

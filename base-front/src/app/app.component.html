@@ -1,0 +1,14 @@
+<div class="whole-page">
+    <div class="left-side">
+        <app-left-side-navigation></app-left-side-navigation>
+    </div>
+    <div class="content-space">
+        <app-main-layout>
+            <router-outlet></router-outlet>
+        </app-main-layout>
+        <app-toast-messages></app-toast-messages>
+        <ng-template *ngIf="visibleScroll">
+            <button class="scroll-top" (click)="scrollToTop()"><i class="fa fa-arrow-up"></i></button>
+        </ng-template>
+    </div>
+</div>

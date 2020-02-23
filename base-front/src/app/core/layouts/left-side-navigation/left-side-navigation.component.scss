@@ -1,0 +1,34 @@
+$white:#EFF1F3;
+$orange: #FED766;
+
+.application-logo {
+  width: 100%;
+  display:inline-block;
+  margin: 15px 15px;
+  max-width: 100px;
+  height: auto;
+}
+
+.main-title {
+  padding: 10px;
+}
+
+.logo-section {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+.logo-section {
+  text-align: left;
+ }
+}
+
+a {
+  text-decoration-line:none;
+}
+
+.fa-user, .fa-cog, .fa-book, .fa-briefcase { 
+  color: $orange;
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,22 @@
+{
+    "nav": {
+        "candidate": "Panel kandydata",
+        "recruiter":"Panel rekrutera",
+        "configuration": "Panel konfiguracyjny",
+        "offers": "Oferty"
+    },
+    "Language": {
+        "Changed":"Zmieniono język"
+    },
+    "Offers": {
+        "Title":"Oferty",
+        "MyOffers":"Moje",
+        "History": "Historia",
+        "All": "Wszystkie"
+    },
+    "Recruiter": {
+        "Panel": "Panel rekrutera",
+        "Recruitations":"Rekrutacje",
+        "Candidates": "Kandydaci"
+    }
+}

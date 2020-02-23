@@ -1,0 +1,10 @@
+<ng-container *ngIf="toastVisible">
+  <div class="toast-container" [ngClass]="{
+    'toast-success': toast?.toastType === toastType.SUCCESS,
+    'toast-danger': toast?.toastType === toastType.DANGER,
+    'toast-warning': toast?.toastType === toastType.WARNING,
+    'toast-info': toast?.toastType === toastType.INFO}">
+    {{toast?.toastHeader}}
+    {{toast?.toastText}}
+  </div>
+</ng-container>

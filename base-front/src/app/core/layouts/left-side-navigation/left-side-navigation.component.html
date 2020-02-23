@@ -1,0 +1,19 @@
+<div class="left-side-navigation">
+  <section class="logo-section">
+    <img class="application-logo" src="./assets/logo/logo.png">
+    <app-hamburger-menu></app-hamburger-menu>
+  </section>
+  <ng-container *ngIf="hamburgerMenuComponent?.toggle">
+    <div class="main-navigation" role="navigation">
+      <app-languages></app-languages>
+      <ul>
+        <li *ngFor="let navigation of navigationLinks">
+          <a routerLink="{{navigation.link}}" routerLinkActive="active-link">
+            <i class="navigation.class"></i>
+            {{ navigation.text | translate }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</div>
