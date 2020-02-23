@@ -1,6 +1,6 @@
 {
-  "name": "recruiter-front",
-  "short_name": "recruiter-front",
+  "name": "baseFront",
+  "short_name": "baseFront",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

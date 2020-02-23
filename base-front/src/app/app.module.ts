@@ -9,6 +9,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxsModule } from '@ngxs/store';
+import { ToastState } from './common/state/toast/toast.state';
+import { RouterState } from './common/state/router/router.state';
 @NgModule({
   declarations: [
     AppComponent
@@ -26,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    [NgxsModule.forRoot([ToastState, RouterState],{ developmentMode: !environment.production })]
   ],
   bootstrap: [AppComponent]
 })

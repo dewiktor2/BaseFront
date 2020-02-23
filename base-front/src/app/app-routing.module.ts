@@ -3,20 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'recruiter',
-    loadChildren: './views/recruiter/recruiter.module#RecruiterModule'
-  },
-  {
-    path: 'configuration-panel',
-    loadChildren: './views/configuration-panel/configuration-panel.module#ConfigurationPanelModule'
-  },
-  {
-    path: 'offers',
-    loadChildren: './views/offers/offers.module#OffersModule'
-  },
-  {
-    path: 'candidate-panel',
-    loadChildren: './views/candidate-panel/candidate-panel.module#CandidatePanelModule'
+    path: 'dashboard',
+    loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
   }
 ];
 @NgModule({

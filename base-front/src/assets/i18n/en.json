@@ -1,22 +1,8 @@
 {
     "nav": {
-        "candidate": "Candidate panel",
-        "recruiter":"Recruiter panel",
-        "configuration": "Configuration panel",
-        "offers": "Offers"
+        "dashboard": "Dashboard"
     },
     "Language": {
         "Changed":"Language changed"
-    },
-    "Offers": {
-        "Title":"Offers",
-        "MyOffers":"My",
-        "History": "History",
-        "All": "All"
-    },
-    "Recruiter": {
-        "Panel": "Recruiter panel",
-        "Recruitations":"Recruitations",
-        "Candidates": "Candidates"
     }
 }

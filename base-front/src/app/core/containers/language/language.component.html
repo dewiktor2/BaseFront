@@ -1,0 +1,7 @@
+<div class="language-content">
+   <ng-container *ngFor="let language of languages">
+        <p (click)="languageSelection(language)" [class.active]="currentLang === language">
+            {{language | uppercase}}
+        </p>
+   </ng-container>
+</div>

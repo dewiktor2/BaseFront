@@ -1,23 +1,22 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Router } from '@angular/router';
-import { RouterEventService } from './core/services/router/router-event.service';
+import { Store } from '@ngxs/store';
+import { RouterActions } from './common/state/router/router.actions';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'recruiter-front';
+  title = 'baseFront';
   visibleScroll = false;
 
-  constructor(private translate: TranslateService, private router: Router
-    , private routerEventService: RouterEventService) {
+  constructor(private translate: TranslateService, private store: Store) {
+    this.store.dispatch(new RouterActions.ListenNavigationEvent());
   }
 
   ngOnInit() {
     this.setLang(this.translate);
-    this.routerEventService.routerNavigationStartEvent(this.router);
   }
 
   scrollToTop() {
