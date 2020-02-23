@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { LeftSideNavigationComponent } from './left-side-navigation.component';
+import { LeftSideNavigationComponent } from "./left-side-navigation.component";
 
-describe('LeftSideNavigationComponent', () => {
+describe("LeftSideNavigationComponent", () => {
   let component: LeftSideNavigationComponent;
   let fixture: ComponentFixture<LeftSideNavigationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeftSideNavigationComponent ]
-    })
-    .compileComponents();
+      declarations: [LeftSideNavigationComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('LeftSideNavigationComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

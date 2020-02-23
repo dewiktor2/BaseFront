@@ -1,14 +1,15 @@
 <div class="whole-page">
-    <div class="left-side">
+  <ng-container *ngIf="loggedIn">
+    <nav class="left-side">
         <app-left-side-navigation></app-left-side-navigation>
-    </div>
-    <div class="content-space">
-        <app-main-layout>
-            <router-outlet></router-outlet>
-        </app-main-layout>
-       <app-application-messages></app-application-messages>
-        <ng-template *ngIf="visibleScroll">
-            <button class="scroll-top" (click)="scrollToTop()"><i class="fa fa-arrow-up"></i></button>
-        </ng-template>
-    </div>
+      </nav>
+  </ng-container>
+  <!--- Main App content-->
+  <div class="content-space">
+    <a *ngIf="loggedIn" style="float:right;" routerLink="/login" routerLinkActive="active-link" (click)="logout()">
+        {{'nav.logout' | translate}}
+    </a>
+    <app-application-messages></app-application-messages>
+    <router-outlet></router-outlet>
+  </div>
 </div>

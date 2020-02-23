@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainLayoutComponent } from './layout/container/main-layout/main-layout.component';
 import { RouterModule } from '@angular/router';
 import { HamburgerMenuComponent } from './layout/components/hamburger-menu/hamburger-menu.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -10,7 +9,6 @@ import { LeftSideNavigationComponent } from './layout/container/left-side-naviga
 @NgModule({
   declarations: [
     LeftSideNavigationComponent
-    , MainLayoutComponent
     , HamburgerMenuComponent
     , ApplicationMessagesComponent
     , LanguageComponent
@@ -23,7 +21,6 @@ import { LeftSideNavigationComponent } from './layout/container/left-side-naviga
   ],
   exports: [  
     LeftSideNavigationComponent
-    , MainLayoutComponent
     , ApplicationMessagesComponent]
 })
 export class CoreModule { 
