@@ -1,4 +1,5 @@
 <div
+  *ngIf="!compressedNavigation"
   class="hamburger-container"
   (click)="onToggleChange()"
   [ngClass]="{ change: toggle }"

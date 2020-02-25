@@ -1,5 +1,4 @@
-$white: #eff1f3;
-$orange: #fed766;
+@import "variables";
 
 .application-logo {
   width: 100%;
@@ -7,6 +6,21 @@ $orange: #fed766;
   margin: 15px 15px;
   max-width: 100px;
   height: auto;
+}
+
+.pin-section {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  .pin {
+    align-self: flex-end;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    transition: all .2s ease-in-out;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
 }
 
 .main-title {
@@ -21,17 +35,4 @@ $orange: #fed766;
   .logo-section {
     text-align: left;
   }
-}
-
-a {
-  text-decoration-line: none;
-}
-
-.fa-user,
-.fa-cog,
-.fa-book,
-.fa-briefcase {
-  color: $orange;
-  width: 24px;
-  height: 24px;
 }

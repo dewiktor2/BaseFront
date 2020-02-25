@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from "@angular/core";
+import { Component, OnInit, HostListener, Input } from "@angular/core";
 import { Select } from "@ngxs/store";
 import { RouterState } from "src/app/common/state/router/router.state";
 import { Observable } from "rxjs";
@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
 })
 export class HamburgerMenuComponent implements OnInit {
   @Select(RouterState.navigationUrl) navigationUrl$: Observable<string>;
+  @Input() compressedNavigation: boolean;
   toggle = false;
   constructor() {}
 
@@ -23,7 +24,9 @@ export class HamburgerMenuComponent implements OnInit {
 
   @HostListener("window:resize", ["$event"])
   onResize() {
-    this.changeToggleEvent();
+    if(!this.compressedNavigation) {
+      this.changeToggleEvent();
+    }
   }
 
   onToggleChange() {

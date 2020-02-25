@@ -17,7 +17,7 @@ import { LeftSideNavigationComponent } from './layout/container/left-side-naviga
   imports: [
     CommonModule,
     RouterModule,
-    TranslateModule,
+    TranslateModule
   ],
   exports: [  
     LeftSideNavigationComponent

@@ -1,19 +1,26 @@
-<div class="left-side-navigation">
-  <section class="logo-section">
-    <img class="application-logo" src="./assets/logo/logo.png" />
-    <app-hamburger-menu></app-hamburger-menu>
-  </section>
-  <ng-container *ngIf="hamburgerMenuComponent?.toggle">
-    <div class="main-navigation" role="navigation">
-      <app-language></app-language>
-      <ul>
-        <li>
-          <a routerLink="/dashboard" routerLinkActive="active-link">
-            <i class="fa fa-briefcase"></i>
-            {{ "nav.dashboard" | translate }}
-          </a>
-        </li>
-      </ul>
+<nav [ngClass]="navigationStyle">
+  <div class="left-side-navigation">
+    <div class="pin-section"  (click)="compress()">
+      <i [ngClass]="pinStyle"></i>
     </div>
-  </ng-container>
-</div>
+    <section class="logo-section">
+      <img *ngIf="!compressedNavigation" class="application-logo" src="./assets/logo/logo.png" />
+      <app-hamburger-menu [compressedNavigation]="compressedNavigation"></app-hamburger-menu>
+    </section>
+    <ng-container *ngIf="hamburgerMenuComponent?.toggle">
+      <div class="main-navigation" role="navigation">
+        <app-language></app-language>
+        <ul>
+          <li>
+            <a (click)="logout()">Logout </a>
+          </li>
+          <li>
+            <a routerLink="/dashboard" routerLinkActive="active-link">
+              {{ "nav.dashboard" | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+  </div>
+</nav>

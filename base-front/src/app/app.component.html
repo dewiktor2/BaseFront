@@ -1,14 +1,9 @@
 <div class="whole-page">
   <ng-container *ngIf="loggedIn">
-    <nav class="left-side">
-        <app-left-side-navigation></app-left-side-navigation>
-      </nav>
+      <app-left-side-navigation></app-left-side-navigation>
   </ng-container>
   <!--- Main App content-->
   <div class="content-space">
-    <a *ngIf="loggedIn" style="float:right;" routerLink="/login" routerLinkActive="active-link" (click)="logout()">
-        {{'nav.logout' | translate}}
-    </a>
     <app-application-messages></app-application-messages>
     <router-outlet></router-outlet>
   </div>

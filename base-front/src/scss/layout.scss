@@ -1,0 +1,44 @@
+@mixin left-side-shadows {
+  box-shadow: -1px 3px 21px -2px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 3px 21px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 21px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 21px -2px rgba(0, 0, 0, 0.75);
+}
+
+.whole-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-side {
+  display: inline-block;
+  width: 220px;
+  height: 100vh;
+  @include left-side-shadows();
+}
+
+.compressed-left-side {
+    width: 4em;
+    font-size: 1.5em;
+    height: 5vh;
+}
+
+.content-space {
+  display: inline-block;
+  padding: 15px 10px 10px 15px;
+  width: calc(100vw - 220px);
+}
+
+@media screen and (max-width: 600px) {
+  .whole-page {
+    flex-direction: column;
+  }
+  .left-side {
+    min-width: 100vw;
+    height: auto;
+  }
+  .content-space {
+    min-width: 100vw;
+    min-height: calc(100vh - 120px);
+  }
+}

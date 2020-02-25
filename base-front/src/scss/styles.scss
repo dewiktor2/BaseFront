@@ -1,47 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~font-awesome/css/font-awesome.css";
-@import "variables.scss";
-@import '~normalize.css';
+@import "~normalize.css";
+@import "variables";
+@import "layout";
 
-// body {
-//     font-family: 'Montserrat', sans-serif;
-//     margin: 0;
-//     padding: 0;
-//     min-height: 100%;
-// }
+// mixins
+@mixin a-link {
+  a {
+    color: $black;
+    &:hover {
+      color: $blue;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
+
+// main style
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.loading-panel {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+}
+
+// navigation, links
+.left-side-navigation {
+  ul li {
+    padding: 15px 10px 15px 0px;
+  }
+}
+
+.active,
+.active-link {
+  color: $blue;
+}
 
 ul {
-    li {
-        text-decoration-line: none;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-}
-
-/* Links */
-.active-link {
-    color: $blue;
-}
-
-.active {
-    color: $orange;
-}
-
-a {
-    text-decoration: none;
-    color: $black;
-    cursor: pointer;
-
-}
-
-a:hover {
-    color: $blue;
-}
-
-/* end links */
-.left-side-navigation {
-    ul li {
-        padding: 15px 10px 15px 0px;
-    }
+  li {
+    text-decoration-line: none;
+    list-style-type: none;
+    @include a-link();
+  }
 }

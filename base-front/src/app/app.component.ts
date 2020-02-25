@@ -12,7 +12,6 @@ export const LANG_STATE = 'lang_state';
 })
 export class AppComponent implements OnInit {
   title = "baseFront";
-
   get loggedIn() {
     return this.login.isLoggedIn();
   }
