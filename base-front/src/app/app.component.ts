@@ -4,7 +4,7 @@ import { Store } from "@ngxs/store";
 import { RouterActions } from "./common/state/router/router.actions";
 import { LocalStorageService } from "./core/services/local-storage/local-storage.service";
 import { LoginService } from "./core/services/login/login.service";
-export const LANG_STATE = 'lang_state';
+export const LANG_STATE = "lang_state";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -21,26 +21,24 @@ export class AppComponent implements OnInit {
     private store: Store,
     private localStorage: LocalStorageService,
     private login: LoginService
-  ) {
-    this.store.dispatch(new RouterActions.ListenNavigationEvent());
-  }
+  ) {}
 
   ngOnInit() {
-    this.setLang(this.translate);
+    this.store.dispatch(new RouterActions.ListenNavigationEvent());
+    this.setLang();
   }
 
   logout() {
     this.login.logout();
   }
 
-  private setLang(translate: TranslateService) {
-    let memoryLang =  this.localStorage.getItem(LANG_STATE);
-    if (memoryLang) {
-      translate.setDefaultLang(memoryLang);
-      translate.use(memoryLang);
-    } else {
-      translate.setDefaultLang("en");
-      translate.use("en");
-    }
+  private setLang() {
+    let memoryLang = this.localStorage.getItem(LANG_STATE);
+    memoryLang ? this.changeLang(memoryLang) : this.changeLang("en");
+  }
+
+  private changeLang(lang: string) {
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang);
   }
 }

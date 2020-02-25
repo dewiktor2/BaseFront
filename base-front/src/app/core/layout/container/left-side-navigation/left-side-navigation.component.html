@@ -5,14 +5,14 @@
     </div>
     <section class="logo-section">
       <img *ngIf="!compressedNavigation" class="application-logo" src="./assets/logo/logo.png" />
-      <app-hamburger-menu [compressedNavigation]="compressedNavigation"></app-hamburger-menu>
+      <app-hamburger-menu [compressed]="compressed$ | async"></app-hamburger-menu>
     </section>
     <ng-container *ngIf="hamburgerMenuComponent?.toggle">
       <div class="main-navigation" role="navigation">
         <app-language></app-language>
         <ul>
           <li>
-            <a (click)="logout()">Logout </a>
+            <a (click)="logout()"> {{ "nav.logout" | translate }} </a>
           </li>
           <li>
             <a routerLink="/dashboard" routerLinkActive="active-link">
