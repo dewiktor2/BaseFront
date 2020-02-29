@@ -1,7 +1,9 @@
 <div class="language-content">
    <ng-container *ngFor="let language of languages">
-        <p (click)="languageSelection(language)" [class.active]="currentLang === language">
-            {{language | uppercase}}
+    <span class="language-circle">
+        <p (click)="languageSelection(language)" [class.active]="currentLang === language.text">
+            <img class="language-icon" [src]="language.src">
         </p>
+    </span>
    </ng-container>
 </div>

@@ -12,7 +12,16 @@ import { LANG_STATE } from 'src/app/app.component';
   styleUrls: ["./language.component.scss"]
 })
 export class LanguageComponent implements OnInit {
-  languages: string[] = ["en", "pl"];
+  languages: {text:string, src: string}[] = [
+    {
+      text: 'en',
+      src: './assets/icons/flags/usa.png'
+    },
+    {
+      text: 'pl',
+      src: './assets/icons/flags/poland.png'
+    }
+  ]
   currentLang: string;
   constructor(private translate: TranslateService
     , private localStorage: LocalStorageService
@@ -22,8 +31,8 @@ export class LanguageComponent implements OnInit {
     this.currentLang = this.translate.currentLang;
   }
 
-  languageSelection(lang: string) {
-    this.changeLang(lang);
+  languageSelection(lang: any) {
+    this.changeLang(lang.text);
     this.notify();
   }
 

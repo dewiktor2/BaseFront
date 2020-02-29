@@ -1,10 +1,7 @@
-<div
-  *ngIf="!compressed"
-  class="hamburger-container"
-  (click)="onToggleChange()"
-  [ngClass]="{ change: toggle }"
->
-  <div class="hamburger-1"></div>
-  <div class="hamburger-2"></div>
-  <div class="hamburger-3"></div>
+<div class="hamburger-container"
+      [ngClass]="{ change: toggle }"
+      (click)="onToggleChange()">
+    <div class="hamburger-1"></div>
+    <div class="hamburger-2"></div>
+    <div class="hamburger-3"></div>
 </div>

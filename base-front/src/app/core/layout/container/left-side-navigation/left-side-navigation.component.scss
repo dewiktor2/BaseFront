@@ -1,5 +1,13 @@
 @import "variables";
 
+.main-title {
+  padding: 10px;
+}
+
+.logo-section {
+  text-align: center;
+}
+
 .application-logo {
   width: 100%;
   display: inline-block;
@@ -8,28 +16,6 @@
   height: auto;
 }
 
-.pin-section {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  .pin {
-    align-self: flex-end;
-    padding-right: 1em;
-    padding-top: 0.5em;
-    transition: all .2s ease-in-out;
-    &:hover {
-      transform: scale(1.5);
-    }
-  }
-}
-
-.main-title {
-  padding: 10px;
-}
-
-.logo-section {
-  text-align: center;
-}
 
 @media screen and (max-width: 600px) {
   .logo-section {

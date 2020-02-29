@@ -9,9 +9,8 @@ import { Observable } from "rxjs";
 })
 export class HamburgerMenuComponent implements OnInit {
   @Select(RouterState.navigationUrl) navigationUrl$: Observable<string>;
-  @Input() compressed: boolean;
-  readonly HAMBURGER_TOGGLE_WIDTH = 600;
   toggle: boolean = false;
+  readonly HAMBURGER_TOGGLE_WIDTH = 600;
   constructor() {}
   ngOnInit() {
     this.changeToggleEvent();
@@ -22,15 +21,13 @@ export class HamburgerMenuComponent implements OnInit {
     });
   }
 
-  @HostListener("window:resize", ["$event"])
-  onResize() {
-    if (!this.compressed) {
-      this.changeToggleEvent();
-    }
-  }
-
   onToggleChange() {
     this.toggle = !this.toggle;
+  }
+
+  @HostListener("window:resize", ["$event"])
+  onResize() {
+    this.changeToggleEvent();
   }
 
   changeToggleEvent() {
