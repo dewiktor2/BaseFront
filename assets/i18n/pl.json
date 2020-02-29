@@ -1,0 +1,16 @@
+{
+    "nav": {
+        "dashboard": "Dashboard",
+        "login":"Zaloguj",
+        "logout":"Wyloguj"
+    },
+    "language": {
+        "changed":"Zmieniono język"
+    },
+    "loginPage": {
+        "username":"login",
+        "password":"hasło",
+        "usernameRequired":"login jest wymagany.",
+        "passwordRequired":"hasło jest wymagane."
+    }
+}

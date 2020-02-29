@@ -1,0 +1,16 @@
+{
+    "nav": {
+        "dashboard": "Dashboard",
+        "login":"Login",
+        "logout":"Logout"
+    },
+    "language": {
+        "changed":"Lang changed"
+    },
+    "loginPage": {
+        "username":"login",
+        "password":"password",
+        "usernameRequired":"login is required.",
+        "passwordRequired":"password is required."
+    }
+}
