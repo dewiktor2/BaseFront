@@ -14,7 +14,7 @@
     .login-button {
       width: 50%;
       transform: translate(50%, 20%);
-      border-radius: 25px;
+      border-radius: 1.5rem;
       background: $blue;
       color: $white;
     }
@@ -27,7 +27,7 @@
 
 input {
     text-align: left;
-    border-radius: 25px;
+    border-radius: 1.5rem;
 }
 
 @media (max-width: 500px) {

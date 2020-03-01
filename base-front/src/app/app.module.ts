@@ -19,7 +19,10 @@ import { RouterState } from './common/state/router/router.state';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
+    AppRoutingModule,
+    CoreModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -27,9 +30,6 @@ import { RouterState } from './common/state/router/router.state';
         deps: [HttpClient]
       }
     }),
-    CoreModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     [NgxsModule.forRoot([ToastState, RouterState],{ developmentMode: !environment.production })]
   ],

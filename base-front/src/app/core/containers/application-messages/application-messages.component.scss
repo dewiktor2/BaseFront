@@ -1,32 +1,31 @@
-$blue: #009FB7;
+@import "variables";
+@mixin toast-color($color) {
+  background-color: $color;
+  border-color: $color;
+}
 .toast-container {
-    border: 1px solid;
-    padding: 15px;
-    margin:15px 25px;
-    text-align: start;
-    position: absolute;
-    color: #EFF1F3;
-    top: 0;
-    right: 0;
-    width: -moz-fit-content;
-    width: fit-content;
+  border: 1px solid;
+  padding: 1rem;
+  margin: 1rem 2rem;
+  border-radius: 1.6rem;
+  text-align: start;
+  position: absolute;
+  color: #eff1f3;
+  top: 0;
+  right: 0;
+  width: -moz-fit-content;
+  width: fit-content;
 }
+// toast
 .toast-info {
-    background-color: #009FB7;
-    border-color: #009FB7;
+  @include toast-color($blue);
 }
-
 .toast-success {
-    background-color: #28a745;
-    border-color: #28a745;
+  @include toast-color($green);
 }
-
 .toast-danger {
-    background-color:#dc3545;
-    border-color: #dc3545;
+  @include toast-color($red);
 }
-
 .toast-warning {
-    background-color: #FED766;
-    border-color: #FED766;
+  @include toast-color($orange);
 }
