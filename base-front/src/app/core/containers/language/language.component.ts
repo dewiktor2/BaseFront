@@ -13,14 +13,8 @@ import { LANG_STATE } from 'src/app/app.component';
 })
 export class LanguageComponent implements OnInit {
   languages: {text:string, src: string}[] = [
-    {
-      text: 'en',
-      src: './assets/icons/flags/usa.png'
-    },
-    {
-      text: 'pl',
-      src: './assets/icons/flags/poland.png'
-    }
+    { text: 'en',src: './assets/icons/flags/usa.png'},
+    { text: 'pl', src: './assets/icons/flags/poland.png'}
   ]
   currentLang: string;
   constructor(private translate: TranslateService

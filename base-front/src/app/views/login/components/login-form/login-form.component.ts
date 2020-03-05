@@ -30,6 +30,7 @@ export class LoginFormComponent implements OnInit {
     this.submitted = true;
     // stop here if form is invalid
     if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
       this.submitted = false;
       return;
     }

@@ -7,6 +7,7 @@ import { LanguageComponent } from './containers/language/language.component';
 import { ApplicationMessagesComponent } from './containers/application-messages/application-messages.component';
 import { LeftSideNavigationComponent } from './layout/container/left-side-navigation/left-side-navigation.component';
 import { LeftNavigationComponent } from './layout/components/left-navigation/left-navigation.component';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     LeftSideNavigationComponent
@@ -17,8 +18,9 @@ import { LeftNavigationComponent } from './layout/components/left-navigation/lef
   ],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule,
-    TranslateModule
+    TranslateModule,
   ],
   exports: [  
     LeftSideNavigationComponent

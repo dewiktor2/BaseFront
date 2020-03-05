@@ -1,13 +1,5 @@
 @import "variables";
 
-.main-title {
-  padding: 10px;
-}
-
-.logo-section {
-  text-align: center;
-}
-
 .application-logo {
   width: 100%;
   display: inline-block;
@@ -15,7 +7,6 @@
   max-width: 100px;
   height: auto;
 }
-
 
 @media screen and (max-width: 600px) {
   .logo-section {
