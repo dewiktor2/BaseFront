@@ -4,7 +4,7 @@
   </ng-container>
   <!--- Main App content-->
   <div class="content-space">
-    <app-application-messages></app-application-messages>
+    <app-message-info [toast]="toast$ | async"></app-message-info>
     <router-outlet></router-outlet>
   </div>
 </div>

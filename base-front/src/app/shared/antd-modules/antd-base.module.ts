@@ -4,7 +4,13 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 @NgModule({
   declarations: [],
-  imports: [NzButtonModule, NzIconModule, NzDropDownModule],
-  exports: [NzButtonModule, NzIconModule, NzDropDownModule]
+  imports: [
+    NzButtonModule
+    , NzIconModule
+    , NzDropDownModule
+  ],
+  exports: [NzButtonModule
+    , NzIconModule
+    , NzDropDownModule]
 })
 export class AntdBaseModule {}

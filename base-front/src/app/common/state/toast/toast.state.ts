@@ -1,8 +1,6 @@
-import { State, Selector, Action, StateContext, Store } from "@ngxs/store";
+import { State, Selector, Action, StateContext } from "@ngxs/store";
 import { ToastMessage } from "src/app/models/toast/message.interface";
 import { ToastActions } from "./toast.actions";
-import { timer } from "rxjs";
-import { tap } from "rxjs/operators";
 
 export class ToastStateModel {
   toast: ToastMessage;
@@ -14,7 +12,7 @@ export class ToastStateModel {
   defaults: new ToastStateModel()
 })
 export class ToastState {
-  constructor(private store: Store) {}
+  constructor() {}
   @Selector() static toast(state: ToastStateModel) {
     return state.toast;
   }
@@ -24,18 +22,11 @@ export class ToastState {
     ctx.patchState({
       toast: action.message
     });
-    this.automaticToastClose();
   }
   @Action(ToastActions.CloseMessage)
   closeMessage(ctx: StateContext<ToastStateModel>) {
     ctx.patchState({
       toast: undefined
     });
-  }
-
-  private automaticToastClose() {
-    timer(2000).pipe(
-        tap(() => this.store.dispatch(new ToastActions.CloseMessage()))
-    ).subscribe();
   }
 }

@@ -4,27 +4,29 @@ import { RouterModule } from '@angular/router';
 import { HamburgerMenuComponent } from './layout/components/hamburger-menu/hamburger-menu.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageComponent } from './containers/language/language.component';
-import { ApplicationMessagesComponent } from './containers/application-messages/application-messages.component';
 import { LeftSideNavigationComponent } from './layout/container/left-side-navigation/left-side-navigation.component';
 import { LeftNavigationComponent } from './layout/components/left-navigation/left-navigation.component';
 import { SharedModule } from '../shared/shared.module';
+import { MessageInfoComponent } from './containers/message-info/message-info.component';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 @NgModule({
   declarations: [
     LeftSideNavigationComponent
     , HamburgerMenuComponent
-    , ApplicationMessagesComponent
     , LanguageComponent
-    , ApplicationMessagesComponent, LeftNavigationComponent
+    , LeftNavigationComponent
+    , MessageInfoComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule,
-    TranslateModule,
+    TranslateModule
+    ,NzMessageModule
   ],
   exports: [  
-    LeftSideNavigationComponent
-    , ApplicationMessagesComponent]
+    MessageInfoComponent,
+    LeftSideNavigationComponent]
 })
 export class CoreModule { 
 }
