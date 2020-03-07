@@ -214,6 +214,8 @@ ng-zorro-antd/button
 
 ng-zorro-antd/dropdown
 
+ng-zorro-antd/message
+
 regenerator-runtime
 MIT
 MIT License

@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1583452522379,
+  "timestamp": 1583601211066,
   "index": "/BaseFront/index.html",
   "assetGroups": [
     {
@@ -8,18 +8,18 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/BaseFront/5-es2015.67642797140d74375089.js",
-        "/BaseFront/5-es5.67642797140d74375089.js",
-        "/BaseFront/6-es2015.32a9d743cb52895c56eb.js",
-        "/BaseFront/6-es5.32a9d743cb52895c56eb.js",
+        "/BaseFront/5-es2015.2cb600df65ddec9fd194.js",
+        "/BaseFront/5-es5.2cb600df65ddec9fd194.js",
+        "/BaseFront/6-es2015.992ee1bce411d1178d56.js",
+        "/BaseFront/6-es5.992ee1bce411d1178d56.js",
         "/BaseFront/favicon.ico",
         "/BaseFront/index.html",
-        "/BaseFront/main-es2015.b35959ba808aa9d271a4.js",
-        "/BaseFront/main-es5.b35959ba808aa9d271a4.js",
+        "/BaseFront/main-es2015.1a652ee876dccc2051ed.js",
+        "/BaseFront/main-es5.1a652ee876dccc2051ed.js",
         "/BaseFront/polyfills-es2015.bf399c0f8f369a8b6250.js",
         "/BaseFront/polyfills-es5.9960ec5c612fafd260c1.js",
-        "/BaseFront/runtime-es2015.92e783ea738ffde9a54e.js",
-        "/BaseFront/runtime-es5.92e783ea738ffde9a54e.js",
+        "/BaseFront/runtime-es2015.dd319f5b11b59356c5ae.js",
+        "/BaseFront/runtime-es5.dd319f5b11b59356c5ae.js",
         "/BaseFront/styles.c0eccb7c386d5a1eba79.css"
       ],
       "patterns": []
@@ -48,10 +48,10 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/BaseFront/5-es2015.67642797140d74375089.js": "db9e6b5a8e8ca6a2489c29ba10dc5560c7845d4c",
-    "/BaseFront/5-es5.67642797140d74375089.js": "39bf24c8fe823c121cd77ea74a53670babb871d5",
-    "/BaseFront/6-es2015.32a9d743cb52895c56eb.js": "6c7e122ddd18b03176ab74d8adc921f8b4d73b5b",
-    "/BaseFront/6-es5.32a9d743cb52895c56eb.js": "3eb24bdac7c6a3abdab6eb225dbbe3bdafe3918b",
+    "/BaseFront/5-es2015.2cb600df65ddec9fd194.js": "6d208636fe695acb85191941b080ef3c56f2890a",
+    "/BaseFront/5-es5.2cb600df65ddec9fd194.js": "de71da1dfb3cb65890846a65c2a6d46736fbce3c",
+    "/BaseFront/6-es2015.992ee1bce411d1178d56.js": "574556e9a9e674c10e204d660c758bc5aba65910",
+    "/BaseFront/6-es5.992ee1bce411d1178d56.js": "964c2796f9df20381cd020d76bb2e064affff6d0",
     "/BaseFront/assets/i18n/en.json": "64adc301c3f35615d788a9dbcc46054e74b7389c",
     "/BaseFront/assets/i18n/pl.json": "c54fd7db4adfedee69a4659675df6d251e2d38ff",
     "/BaseFront/assets/icons/flags/poland.png": "edfa7cfeb79a9adc1e53b96494ab16d6410db3ff",
@@ -66,13 +66,13 @@
     "/BaseFront/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/BaseFront/assets/logo/logo.png": "c30c29a81807ceccf054b1a5f1cc5ff0a3590a74",
     "/BaseFront/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/BaseFront/index.html": "0db303ae58f9061599b2c251d249f8af0a4b021b",
-    "/BaseFront/main-es2015.b35959ba808aa9d271a4.js": "3b86f669e77ee62fded647724b6e493fcbbebd88",
-    "/BaseFront/main-es5.b35959ba808aa9d271a4.js": "3cc0f77a446e4ff3ed5c26c0454e7810b95affc2",
+    "/BaseFront/index.html": "e4aa8c15f5d9535099871f6f449a343f5c784fd2",
+    "/BaseFront/main-es2015.1a652ee876dccc2051ed.js": "f55b63d686910b12597b1104989a86392a2a34a8",
+    "/BaseFront/main-es5.1a652ee876dccc2051ed.js": "c0fee493c21dd8a2449eb105f5a6c573fffc67ce",
     "/BaseFront/polyfills-es2015.bf399c0f8f369a8b6250.js": "1f298710f52040e18f2abd3497360451208873d9",
     "/BaseFront/polyfills-es5.9960ec5c612fafd260c1.js": "c2511e76c7e3116d0009f70cd4a187cb3f2cbe9c",
-    "/BaseFront/runtime-es2015.92e783ea738ffde9a54e.js": "f36ce6ec454f4b2530ac2aca0bcee1535a78c1f6",
-    "/BaseFront/runtime-es5.92e783ea738ffde9a54e.js": "ec0d03395cf775f050fc71ead6556b6e65d13a92",
+    "/BaseFront/runtime-es2015.dd319f5b11b59356c5ae.js": "5d473a6b88ca35d2f19970b9fe291c302898be3a",
+    "/BaseFront/runtime-es5.dd319f5b11b59356c5ae.js": "77d3e765d24c23be576279cb3fd711158b016da2",
     "/BaseFront/styles.c0eccb7c386d5a1eba79.css": "cfd231ef92f12ef7ce20a322196ef7ac964002aa"
   },
   "navigationUrls": [
