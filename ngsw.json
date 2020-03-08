@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1583629978677,
+  "timestamp": 1583633407913,
   "index": "/BaseFront/index.html",
   "assetGroups": [
     {
@@ -16,13 +16,13 @@
         "/BaseFront/common-es5.1e1667809b82998dde9f.js",
         "/BaseFront/favicon.ico",
         "/BaseFront/index.html",
-        "/BaseFront/main-es2015.44458e3d1b07c763efbb.js",
-        "/BaseFront/main-es5.44458e3d1b07c763efbb.js",
+        "/BaseFront/main-es2015.a0836dd3b1ffa94735cc.js",
+        "/BaseFront/main-es5.a0836dd3b1ffa94735cc.js",
         "/BaseFront/polyfills-es2015.6cceced0316c73e08abc.js",
         "/BaseFront/polyfills-es5.a8319c0ba8a05489cafe.js",
         "/BaseFront/runtime-es2015.97429995c1155dea2e36.js",
         "/BaseFront/runtime-es5.97429995c1155dea2e36.js",
-        "/BaseFront/styles.f3a67f3d8745f664e9db.css"
+        "/BaseFront/styles.ef54c688209058b22f38.css"
       ],
       "patterns": []
     },
@@ -70,14 +70,14 @@
     "/BaseFront/common-es2015.1e1667809b82998dde9f.js": "586014aa6c22d47febbf507f5aa0641cdeec9d0c",
     "/BaseFront/common-es5.1e1667809b82998dde9f.js": "586014aa6c22d47febbf507f5aa0641cdeec9d0c",
     "/BaseFront/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/BaseFront/index.html": "4e3f60e39c56440755f926a619e87e71a57d4b4e",
-    "/BaseFront/main-es2015.44458e3d1b07c763efbb.js": "b92448db2c6dbfda86e5d6ff1fc1a5680293a2dd",
-    "/BaseFront/main-es5.44458e3d1b07c763efbb.js": "227c4cef03b6b50d58bd76ae785a763943d08309",
+    "/BaseFront/index.html": "0042c2dd3c059749ffe38c1b87685d17563a3781",
+    "/BaseFront/main-es2015.a0836dd3b1ffa94735cc.js": "dbd8b4038ddc66620edfc1d1b83f4b1b6c695b3e",
+    "/BaseFront/main-es5.a0836dd3b1ffa94735cc.js": "4c44d281dd863bd33d0b9ebc0642b428ea72e038",
     "/BaseFront/polyfills-es2015.6cceced0316c73e08abc.js": "83ea976f640ab52fba6919c590b7b5f2151684c4",
     "/BaseFront/polyfills-es5.a8319c0ba8a05489cafe.js": "4b27ff87ab013dbbfe53dfd5e5f15bbf0172ffe7",
     "/BaseFront/runtime-es2015.97429995c1155dea2e36.js": "20d90d6c3c05fc7d49c8957f9bd53002bc2bd529",
     "/BaseFront/runtime-es5.97429995c1155dea2e36.js": "70551a860ef497295db7f89d62d0abdcc81f5181",
-    "/BaseFront/styles.f3a67f3d8745f664e9db.css": "69d4680e06a041027dc4ab71953e44db3ee571db"
+    "/BaseFront/styles.ef54c688209058b22f38.css": "7e174498acbfdab8bf016ba2d4ac33aa8312146c"
   },
   "navigationUrls": [
     {
