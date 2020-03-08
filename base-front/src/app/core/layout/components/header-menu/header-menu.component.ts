@@ -1,17 +1,19 @@
 import { Component, OnInit, HostListener, Input } from "@angular/core";
-import { Select } from "@ngxs/store";
+import { Select, Store } from "@ngxs/store";
 import { RouterState } from "src/app/common/state/router/router.state";
 import { Observable } from "rxjs";
+import { LayoutActions } from 'src/app/common/state/layout/layout.actions';
 @Component({
-  selector: "app-hamburger-menu",
-  templateUrl: "./hamburger-menu.component.html",
-  styleUrls: ["./hamburger-menu.component.scss"]
+  selector: "app-header-menu",
+  templateUrl: "./header-menu.component.html",
+  styleUrls: ["./header-menu.component.scss"]
 })
-export class HamburgerMenuComponent implements OnInit {
+export class HeaderMenuComponent implements OnInit {
   @Select(RouterState.navigationUrl) navigationUrl$: Observable<string>;
   toggle: boolean = false;
+  currentWidth = 0;
   readonly HAMBURGER_TOGGLE_WIDTH = 600;
-  constructor() {}
+  constructor(private store: Store) {}
   ngOnInit() {
     this.changeToggleEvent();
     this.navigationUrl$.subscribe(() => {
@@ -31,7 +33,10 @@ export class HamburgerMenuComponent implements OnInit {
   }
 
   changeToggleEvent() {
-    this.toggle =
-      window.innerWidth > this.HAMBURGER_TOGGLE_WIDTH ? true : false;
+    this.currentWidth = window.innerWidth;
+    this.toggle = window.innerWidth > this.HAMBURGER_TOGGLE_WIDTH ? true : false;
+    if(!this.toggle) {
+      this.store.dispatch(new LayoutActions.CollapseMenu(false));
+    }
   }
 }

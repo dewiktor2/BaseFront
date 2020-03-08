@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "deploy": "ng build --prod --base-href /BaseFront/ &&  npx ngh --dir=dist/base-front",
+    "deploy": "ng build --prod --base-href /BaseFront/ &&  npx ngh --no-silent --dir=dist/base-front",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",

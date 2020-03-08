@@ -4,7 +4,8 @@
   </ng-container>
   <!--- Main App content-->
   <div class="content-space">
-    <app-message-info [toast]="toast$ | async"></app-message-info>
+    <nz-breadcrumb [nzAutoGenerate]="true"></nz-breadcrumb>
+    <!-- <app-message-info [toast]="toast$ | async"></app-message-info> -->
     <router-outlet></router-outlet>
   </div>
 </div>
