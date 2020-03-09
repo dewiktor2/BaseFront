@@ -2,7 +2,8 @@
     "nav": {
         "dashboard": "Dashboard",
         "login":"Login",
-        "logout":"Logout"
+        "logout":"Logout",
+        "usersRoles":"Users and roles"
     },
     "language": {
         "changed":"Lang changed"

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { MessageSeverity } from "src/app/models/toast/message-severity.type";
 import { Store } from "@ngxs/store";
@@ -12,11 +12,19 @@ import { LANG_STATE } from 'src/app/app.component';
   styleUrls: ["./language.component.scss"]
 })
 export class LanguageComponent implements OnInit {
+  @Input() theme: string;
   languages: {text:string, src: string}[] = [
     { text: 'en',src: './assets/icons/flags/usa.png'},
     { text: 'pl', src: './assets/icons/flags/poland.png'}
   ]
   currentLang: string;
+
+  get languageColor() {
+    return this.theme === 'dark' 
+    ? { 'background-color': 'white', 'color':'#001529' }
+    : { 'background-color': '#1890ff' }
+  }
+
   constructor(private translate: TranslateService
     , private localStorage: LocalStorageService
     , private store: Store) {}

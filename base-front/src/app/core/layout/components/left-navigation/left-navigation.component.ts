@@ -12,7 +12,7 @@ export class LeftNavigationComponent implements OnInit {
   @Output() logout = new EventEmitter();
 
   get menuListWidth() {
-    return this.isCollapsed ? { 'width': '140px'} : { 'width': '100%', 'border': '0'};
+    return this.isCollapsed ? { 'width': '70px'} : { 'width': '100%'};
   }
   constructor(private router: Router) { }
 

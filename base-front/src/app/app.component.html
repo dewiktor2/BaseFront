@@ -3,9 +3,11 @@
       <app-left-side-navigation></app-left-side-navigation>
   </ng-container>
   <!--- Main App content-->
-  <div class="content-space">
-    <nz-breadcrumb [nzAutoGenerate]="true"></nz-breadcrumb>
-    <!-- <app-message-info [toast]="toast$ | async"></app-message-info> -->
+  <div class="content-space" [ngClass]="themeClass">
+    <app-page-header-title></app-page-header-title>
+    <ng-container *ngIf="toast$ | async as toast">
+      <app-message-info [toast]="toast"></app-message-info>
+    </ng-container>
     <router-outlet></router-outlet>
   </div>
 </div>

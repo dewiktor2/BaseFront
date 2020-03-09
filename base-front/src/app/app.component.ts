@@ -7,6 +7,7 @@ import { LoginService } from "./core/services/login/login.service";
 import { ToastState } from './common/state/toast/toast.state';
 import { Observable } from 'rxjs';
 import { ToastMessage } from './models/toast/message.interface';
+import { LayoutState } from './common/state/layout/layout.state';
 export const LANG_STATE = "lang_state";
 @Component({
   selector: "app-root",
@@ -18,6 +19,11 @@ export class AppComponent implements OnInit {
   title = "baseFront";
   get loggedIn() {
     return this.login.isLoggedIn();
+  }
+
+  get themeClass() {
+    return this.store.selectSnapshot(LayoutState.theme) === 'dark' 
+      ? 'dark' : 'light';
   }
 
   constructor(

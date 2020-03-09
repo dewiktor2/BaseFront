@@ -12,6 +12,14 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
+    path: 'users-roles'
+    ,loadChildren: () => import('./views/users-roles/users-roles.module').then(m => m.UsersRolesModule)
+    , data: {
+      breadcrumb: 'User/Role Management' 
+    },
+    canActivate: [AuthGuardService]
+  },
+  {
     path: 'login',
     loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule)
   },

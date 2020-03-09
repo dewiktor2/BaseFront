@@ -14,8 +14,9 @@
     .login-button {
       width: 50%;
       transform: translate(50%, 20%);
+      border: 0px;
       border-radius: 1.5rem;
-      background: $blue;
+      background: $dark-blue;
       color: $white;
     }
   }

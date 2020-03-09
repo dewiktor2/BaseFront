@@ -1,0 +1,55 @@
+@import "variables";
+.inner-content {
+  padding: 24px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+
+  .group-edit-buttons {
+    .flex-button {
+      margin-right: 1rem
+    }
+  }
+}
+
+nz-collapse {
+  width:100%;
+}
+
+.table2 {
+  padding-top: 5rem;
+  width: 50%;
+  border-collapse: collapse;
+  th {
+    text-align: left;
+  }
+  td {
+    color: rgb(107, 119, 140);
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .name-col {
+    width: 33.33%;
+  }
+  .email-col {
+    width: 33.33%;
+  }
+  .activity-col {
+    width: 33.33%;
+  }
+  .actionElem {
+    text-align: center;
+  }
+}
+
+.ant-list-split .ant-list-item {
+    border: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .table2 {
+    width: 100%;
+  }
+
+}

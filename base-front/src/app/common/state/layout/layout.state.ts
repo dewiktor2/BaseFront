@@ -5,7 +5,7 @@ export class LayoutStateModel {
   collapsed: boolean;
   theme: string;
   constructor() {
-      this.collapsed = false;
+      this.collapsed = true;
       this.theme = 'dark';
   }
 }
