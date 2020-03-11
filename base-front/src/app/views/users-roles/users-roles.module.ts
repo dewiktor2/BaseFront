@@ -10,12 +10,14 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzTableModule } from 'ng-zorro-antd/table';
 @NgModule({
   declarations: [UsersRolesComponent],
   imports: [ CommonModule
     , SharedModule
     , NzListModule
     , NzBadgeModule
+    , NzTableModule
     , NzDropDownModule
     , NzCollapseModule
     , NzAvatarModule

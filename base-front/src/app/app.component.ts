@@ -8,6 +8,7 @@ import { ToastState } from './common/state/toast/toast.state';
 import { Observable } from 'rxjs';
 import { ToastMessage } from './models/toast/message.interface';
 import { LayoutState } from './common/state/layout/layout.state';
+import { AuthService } from './common/endpoints/auth/auth.endpoint';
 export const LANG_STATE = "lang_state";
 @Component({
   selector: "app-root",
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   constructor(
+    private authService: AuthService,
     private translate: TranslateService,
     private store: Store,
     private localStorage: LocalStorageService,

@@ -11,7 +11,7 @@
         <ng-template #item let-item>
             <nz-list-item>
                 <nz-collapse [nzBordered]="false">
-                    <nz-collapse-panel [nzHeader]="item.name" [nzActive]="true">               
+                    <nz-collapse-panel [nzHeader]="item.name" [nzActive]="true">
                         <p style="margin:0;">
                             {{item.description}}
                         </p>
@@ -27,17 +27,17 @@
                                 </span>
                             </ng-template>
                             <ng-template #nzDescription>
-                                <table class="table2">
+                                <nz-table #basicTable nzSize="middle" [nzData]="item.users">
                                     <thead>
                                         <tr>
-                                            <th class="name-col">Name</th>
-                                            <th class="email-col">Email</th>
-                                            <th class="activity-col">Last activity</th>
-                                            <th class="activity-col">Actions</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>LastSession</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let user of item.users">
+                                        <tr *ngFor="let user of basicTable.data">
                                             <td>
                                                 <nz-avatar [ngStyle]="{ 'background-color': '#121212' }"
                                                     [nzText]="getShortName(user.name)" nzSize="large"
@@ -47,7 +47,7 @@
                                             <td>{{user.email}}</td>
                                             <td>{{user.lastActivity}}</td>
                                             <td class="actionElem">
-        
+
                                                 <a nz-dropdown [nzDropdownMenu]="menu">
                                                     <i class="fas fa-ellipsis-h"></i>
                                                 </a>
@@ -60,7 +60,7 @@
                                             </td>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </nz-table>
                             </ng-template>
                         </nz-list-item-meta>
                     </nz-collapse-panel>
