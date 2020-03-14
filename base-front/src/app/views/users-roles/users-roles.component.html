@@ -1,7 +1,7 @@
 <div class="inner-content">
     <div class="group-edit-buttons">
         <button class="flex-button" nz-button nzType="default">
-            Create group
+            Create role
         </button>
         <button class="flex-button" nz-button nzType="default">
             Add users to a role
@@ -11,21 +11,14 @@
         <ng-template #item let-item>
             <nz-list-item>
                 <nz-collapse [nzBordered]="false">
-                    <nz-collapse-panel [nzHeader]="item.name" [nzActive]="true">
-                        <p style="margin:0;">
+                    <nz-collapse-panel [nzHeader]="item.name" [nzActive]="true" [nzExtra]="roleOptions">
+                        <div class="badge-container">
                             {{item.description}}
-                        </p>
-                        <nz-list-item-meta [nzTitle]="nzTitle" [nzDescription]='nzDescription'>
-                            <ng-template #nzTitle>
-                                <span class="role-description"> Showing {{item.totalCount}} of
-                                    {{item.totalCount}}</span>
-                                <span [ngStyle]="{'padding-left': '1rem', 'font-size':'16px', 'cursor': 'pointer'}">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                                <span [ngStyle]="{'padding-left': '1rem', 'font-size':'16px', 'cursor': 'pointer'}">
-                                    <i class="fas fa-trash"></i>
-                                </span>
-                            </ng-template>
+                            <span class="badge-space badge badge-dark">
+                                <span class="badge-content">{{item.users.length}}</span>
+                            </span>
+                        </div>
+                        <nz-list-item-meta  [nzDescription]='nzDescription'>
                             <ng-template #nzDescription>
                                 <nz-table #basicTable nzSize="middle" [nzData]="item.users">
                                     <thead>
@@ -53,7 +46,6 @@
                                                 </a>
                                                 <nz-dropdown-menu #menu="nzDropdownMenu">
                                                     <ul nz-menu>
-                                                        <li nz-menu-item>Add user to group</li>
                                                         <li nz-menu-item>Remove from group</li>
                                                     </ul>
                                                 </nz-dropdown-menu>
@@ -65,6 +57,11 @@
                         </nz-list-item-meta>
                     </nz-collapse-panel>
                 </nz-collapse>
+                <ng-template #roleOptions>
+                    <button class="flex-button" nz-button nzType="default" (click)="$event.stopPropagation()">
+                        delete role
+                    </button>
+                </ng-template>
             </nz-list-item>
         </ng-template>
     </nz-list>
