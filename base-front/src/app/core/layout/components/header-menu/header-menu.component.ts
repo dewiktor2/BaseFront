@@ -1,8 +1,8 @@
 import { Component, OnInit, HostListener, Input } from "@angular/core";
 import { Select, Store } from "@ngxs/store";
-import { RouterState } from "src/app/common/state/router/router.state";
 import { Observable } from "rxjs";
-import { LayoutActions } from 'src/app/common/state/layout/layout.actions';
+import { LayoutActions } from '@app/common/state/layout/layout.actions';
+import { RouterState } from '@app/common/state/router/router.state';
 @Component({
   selector: "app-header-menu",
   templateUrl: "./header-menu.component.html",

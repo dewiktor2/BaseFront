@@ -12,23 +12,6 @@ export class UsersRolesComponent implements OnInit {
       name: 'Administrators',
       description: 'Administration roles',
       totalCount: 2,
-      places: [{
-        place: 'Kraków',
-      },
-      {
-        place: 'Warszawa',
-      }, {
-        place: 'Gdansk',
-      }, {
-        place: 'Łomza',
-      }, {
-        place: 'Coronavirus',
-      }, {
-        place: 'Gwatemala',
-      }, {
-        place: 'Islambad',
-      }
-      ],
       users: [
         {
           id: 1,
@@ -49,13 +32,6 @@ export class UsersRolesComponent implements OnInit {
       name: 'Developers',
       description: 'Create apps',
       totalCount: 6,
-      places: [{
-        place: 'Kraków',
-      },
-      {
-        place: 'Warszawa',
-      }
-      ],
       users: [
         {
           id: 3,

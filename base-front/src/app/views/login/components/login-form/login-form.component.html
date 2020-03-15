@@ -2,11 +2,11 @@
     <img class="logo" [src]="srcLogo" />
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
         <div class="form-group">
-            <input type="text" formControlName="username" class="form-control"
-                [ngClass]="{ 'is-invalid': usernameControl.touched && usernameControl.errors }"
+            <input type="text" formControlName="login" class="form-control"
+                [ngClass]="{ 'is-invalid': loginControl.touched && loginControl.errors }"
                 placeholder="{{'loginPage.username' | translate}}" />
-            <div *ngIf="usernameControl.touched && usernameControl.errors" class="invalid-feedback">
-                <div *ngIf="usernameControl.touched && usernameControl.errors.required">
+            <div *ngIf="loginControl.touched && loginControl.errors" class="invalid-feedback">
+                <div *ngIf="loginControl.touched && loginControl.errors.required">
                     {{'loginPage.usernameRequired' | translate}}
                 </div>
             </div>

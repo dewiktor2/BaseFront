@@ -1,4 +1,5 @@
-import { ToastMessage } from 'src/app/models/toast/message.interface';
+import { ToastMessage } from '@app/models/toast/message.interface';
+
 
 export namespace ToastActions {
     export class AddMessage {

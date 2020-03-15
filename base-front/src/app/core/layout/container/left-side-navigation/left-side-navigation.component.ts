@@ -1,11 +1,11 @@
-import { Component, ViewChild, AfterViewInit, ViewEncapsulation} from "@angular/core";
-import { LoginService } from "src/app/core/services/login/login.service";
+import { Component, ViewChild} from "@angular/core";
 import { Router } from "@angular/router";
 import { Select, Store } from '@ngxs/store';
-import { LayoutState } from 'src/app/common/state/layout/layout.state';
 import { Observable } from 'rxjs';
-import { LayoutActions } from 'src/app/common/state/layout/layout.actions';
 import { HeaderMenuComponent } from '../../components/header-menu/header-menu.component';
+import { LayoutState } from '@app/common/state/layout/layout.state';
+import { LoginService } from '@app/core/services/login/login.service';
+import { LayoutActions } from '@app/common/state/layout/layout.actions';
 
 @Component({
   selector: "app-left-side-navigation",

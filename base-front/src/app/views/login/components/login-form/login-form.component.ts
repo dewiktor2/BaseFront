@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 export const LOGO_SRC = './assets/logo/logo.png';
@@ -12,7 +12,7 @@ export class LoginFormComponent implements OnInit {
   submitted: boolean = false;
   loginForm: FormGroup;
   srcLogo = LOGO_SRC;
-  get usernameControl() { return this.loginForm.controls['username']}
+  get loginControl() { return this.loginForm.controls['login']}
   get passwordControl() { return this.loginForm.controls['password']}
   get isValid() { return this.loginForm.valid}
   constructor(
@@ -21,7 +21,7 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ["", Validators.required],
+      login: ["", Validators.required],
       password: ["", Validators.required]
     });
   }
