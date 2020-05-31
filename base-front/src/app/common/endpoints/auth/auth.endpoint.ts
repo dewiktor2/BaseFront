@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpFactory} from '../http-factory'
-export class AuthUrls {
+class AuthUrls {
     static LOGIN_POST: string = 'authenticate';
 }
 

@@ -4,7 +4,7 @@ import { ToastMessage } from '@app/models/toast/message.interface';
 
 export class ToastStateModel {
   toast: ToastMessage;
-  constructor() {}
+  constructor() { }
 }
 
 @State<ToastStateModel>({
@@ -12,21 +12,18 @@ export class ToastStateModel {
   defaults: new ToastStateModel()
 })
 export class ToastState {
-  constructor() {}
+  constructor() { }
   @Selector() static toast(state: ToastStateModel) {
     return state.toast;
   }
 
   @Action(ToastActions.AddMessage)
-  addMessage(ctx: StateContext<ToastStateModel>, action: ToastActions.AddMessage) {
-    ctx.patchState({
-      toast: action.message
-    });
+  addMessage({ patchState }: StateContext<ToastStateModel>, { toast }: ToastActions.AddMessage) {
+    patchState({ toast });
   }
+
   @Action(ToastActions.CloseMessage)
-  closeMessage(ctx: StateContext<ToastStateModel>) {
-    ctx.patchState({
-      toast: undefined
-    });
+  closeMessage({ patchState }: StateContext<ToastStateModel>) {
+    patchState({ toast: undefined });
   }
 }

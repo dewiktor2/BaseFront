@@ -8,7 +8,6 @@ import { ToastState } from './common/state/toast/toast.state';
 import { Observable } from 'rxjs';
 import { ToastMessage } from './models/toast/message.interface';
 import { LayoutState } from './common/state/layout/layout.state';
-import { AuthService } from './common/endpoints/auth/auth.endpoint';
 export const LANG_STATE = "lang_state";
 @Component({
   selector: "app-root",
@@ -18,17 +17,16 @@ export const LANG_STATE = "lang_state";
 export class AppComponent implements OnInit {
   @Select(ToastState.toast) toast$: Observable<ToastMessage>;
   title = "baseFront";
+
   get loggedIn() {
     return this.login.isLoggedIn();
   }
 
   get themeClass() {
-    return this.store.selectSnapshot(LayoutState.theme) === 'dark' 
-      ? 'dark' : 'light';
+    return this.store.selectSnapshot(LayoutState.theme) === 'dark' ? 'dark' : 'light';
   }
 
   constructor(
-    private authService: AuthService,
     private translate: TranslateService,
     private store: Store,
     private localStorage: LocalStorageService,
@@ -45,7 +43,7 @@ export class AppComponent implements OnInit {
   }
 
   private setLang() {
-    let memoryLang = this.localStorage.getItem(LANG_STATE);
+    const memoryLang = this.localStorage.getItem(LANG_STATE);
     memoryLang ? this.changeLang(memoryLang) : this.changeLang("en");
   }
 

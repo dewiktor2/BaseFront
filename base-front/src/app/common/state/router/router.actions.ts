@@ -1,6 +1,6 @@
 export namespace RouterActions {
     export class ListenNavigationEvent {
-        static readonly type = '[NavigationRoute] ListenNavigationEvent';
+        static readonly type = '[Navigation Route] ListenNavigationEvent';
         constructor() { }
     }
 }

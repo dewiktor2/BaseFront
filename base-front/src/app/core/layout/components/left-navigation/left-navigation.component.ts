@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Output, EventEmitter, Input, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-left-navigation',
@@ -6,17 +6,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./left-navigation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LeftNavigationComponent implements OnInit {
-  @Input() isCollapsed: boolean;
-  @Input() theme: boolean;
+export class LeftNavigationComponent {
+  @Input() theme: string;
+  @Input() set isCollapsed(isCollapsed: boolean) {
+    this._isCollapsed = isCollapsed;
+    this.changeMenuListWidthStyle();
+  }
+  _isCollapsed: boolean;
+  menuListWidth = {};
   @Output() logout = new EventEmitter();
 
-  get menuListWidth() {
-    return this.isCollapsed ? { 'width': '70px'} : { 'width': '100%'};
+  get isCollapsed() {
+    return this._isCollapsed;
   }
+
   constructor(private router: Router) { }
 
-  ngOnInit() {
+  changeMenuListWidthStyle() {
+    this.menuListWidth = this.isCollapsed
+      ? { 'width': '70px' }
+      : { 'width': '100%' };
   }
 
   onLogout() {
@@ -26,5 +35,4 @@ export class LeftNavigationComponent implements OnInit {
   goToPage(page: string) {
     this.router.navigate([`${page}`])
   }
-
 }

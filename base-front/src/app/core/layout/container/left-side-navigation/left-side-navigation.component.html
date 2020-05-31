@@ -1,13 +1,13 @@
-<nav [ngClass]="menuStyles">
+<nav [ngClass]="menuClass">
   <div class="left-side-navigation">
     <span class="collapse-item" (click)="toggleCollapsed()">
-      <i nz-icon [nzType]="collapsed ? 'menu-unfold' : 'menu-fold'"></i>
+      <i nz-icon [nzType]="menuIcon"></i>
     </span>
     <app-header-menu></app-header-menu>
     <div *ngIf="headerMenuComponent?.toggle" class="toggle">
       <app-language [theme]="theme$ | async"></app-language>
       <span class="moon-item" (click)="changeTheme()">
-        <i [ngClass]="themeMode"></i>
+        <i [ngClass]="'fas fa-moon'"></i>
       </span>
     </div>
     <nz-divider *ngIf="headerMenuComponent?.currentWidth > 600" #diver [style.backgroundColor]="dividerColor"></nz-divider>

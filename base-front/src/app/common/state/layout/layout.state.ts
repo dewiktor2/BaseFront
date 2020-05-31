@@ -5,8 +5,8 @@ export class LayoutStateModel {
   collapsed: boolean;
   theme: string;
   constructor() {
-      this.collapsed = true;
-      this.theme = 'dark';
+    this.collapsed = true;
+    this.theme = 'dark';
   }
 }
 
@@ -15,7 +15,7 @@ export class LayoutStateModel {
   defaults: new LayoutStateModel()
 })
 export class LayoutState {
-  constructor() {}
+  constructor() { }
   @Selector() static collapsed(state: LayoutStateModel) {
     return state.collapsed;
   }
@@ -24,16 +24,13 @@ export class LayoutState {
   }
 
   @Action(LayoutActions.CollapseMenu)
-  collapseMenu(ctx: StateContext<LayoutStateModel>, action: LayoutActions.CollapseMenu) {
-    ctx.patchState({
-      collapsed: action.collapsed
-    });
+  collapseMenu({ patchState }: StateContext<LayoutStateModel>, {collapsed}: LayoutActions.CollapseMenu) {
+    patchState({ collapsed });
   }
+
   @Action(LayoutActions.ChangeTheme)
   changeTheme(ctx: StateContext<LayoutStateModel>) {
     const state = ctx.getState();
-    ctx.patchState({
-      theme: state.theme === 'dark' ? 'light' : 'dark'
-    });
+    ctx.patchState({ theme: state.theme === 'dark' ? 'light' : 'dark' });
   }
 }

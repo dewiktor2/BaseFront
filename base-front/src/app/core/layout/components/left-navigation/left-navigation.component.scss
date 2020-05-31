@@ -1,10 +1,6 @@
 @import "variables";
-.wrapper {
-  width: 150spx;
-
-  .menu-icon {
-    font-size: 1.5rem;
-  }
+.navigation-wrapper {
+  width: 150px;
 
   .ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
     color: $orange;

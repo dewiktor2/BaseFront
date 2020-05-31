@@ -6,6 +6,11 @@ import { LocalStorageService } from '../../services/local-storage/local-storage.
 import { LANG_STATE } from '@app/app.component';
 import { MessageSeverity } from '@app/models/toast/message-severity.type';
 
+interface LanguageModel {
+  text: string;
+  src: string;
+}
+
 @Component({
   selector: "app-language",
   templateUrl: "./language.component.html",
@@ -13,27 +18,33 @@ import { MessageSeverity } from '@app/models/toast/message-severity.type';
 })
 export class LanguageComponent implements OnInit {
   @Input() theme: string;
-  languages: {text:string, src: string}[] = [
-    { text: 'en',src: './assets/icons/flags/usa.png'},
-    { text: 'pl', src: './assets/icons/flags/poland.png'}
-  ]
+  languages: LanguageModel[] = [];
   currentLang: string;
 
   get languageColor() {
-    return this.theme === 'dark' 
-    ? { 'background-color': 'white', 'color':'#001529' }
-    : { 'background-color': '#1890ff' }
+    return this.theme === 'dark'
+      ? { 'background-color': 'white', 'color': '#001529' }
+      : { 'background-color': '#1890ff' }
   }
 
   constructor(private translate: TranslateService
     , private localStorage: LocalStorageService
-    , private store: Store) {}
-
-  ngOnInit() {
-    this.currentLang = this.translate.currentLang;
+    , private store: Store) {
   }
 
-  languageSelection(lang: any) {
+  ngOnInit() {
+    this.setupLanguage();
+  }
+
+  setupLanguage() {
+    this.currentLang = this.translate.currentLang;
+    this.languages = [
+      { text: 'en', src: './assets/icons/flags/usa.png' },
+      { text: 'pl', src: './assets/icons/flags/poland.png' }
+    ]
+  }
+
+  languageSelection(lang: LanguageModel) {
     this.changeLang(lang.text);
     this.notify();
   }
