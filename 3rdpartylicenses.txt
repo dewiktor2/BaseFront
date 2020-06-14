@@ -51,8 +51,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-@angular/cdk/scrolling
-
 @angular/common
 MIT
 
@@ -176,6 +174,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+ng-zorro-antd
+MIT
+
+undefined
+
 core-js
 MIT
 Copyright (c) 2014-2020 Denis Pushkarev
@@ -207,44 +210,19 @@ date-fns is licensed under the [MIT license](http://kossnocorp.mit-license.org).
 Read more about MIT at [TLDRLegal](https://tldrlegal.com/license/mit-license).
 
 
-ng-zorro-antd
-MIT
-
-undefined
-
 ng-zorro-antd/avatar
 
 ng-zorro-antd/breadcrumb
 
 ng-zorro-antd/button
 
-ng-zorro-antd/checkbox
-
-ng-zorro-antd/collapse
-
 ng-zorro-antd/divider
 
 ng-zorro-antd/dropdown
 
-ng-zorro-antd/empty
-
-ng-zorro-antd/list
-
 ng-zorro-antd/message
 
 ng-zorro-antd/page-header
-
-ng-zorro-antd/pagination
-
-ng-zorro-antd/radio
-
-ng-zorro-antd/select
-
-ng-zorro-antd/spin
-
-ng-zorro-antd/table
-
-ng-zorro-antd/tooltip
 
 regenerator-runtime
 MIT
