@@ -19,7 +19,32 @@
       background: $dark-blue;
       color: $white;
     }
+    .register {
+      position: absolute;
+      display: inline;
+      transform: translate(50%, 50%);
+      padding-left: 1.2rem;
+      padding-top: 1rem;
+      font-size: 14px;
+      left: 0;
+    }
   }
+}
+
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
 }
 
 input {

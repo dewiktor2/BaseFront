@@ -1,7 +1,6 @@
 import { State, Selector, Action, StateContext } from "@ngxs/store";
 import { LayoutActions } from './layout.actions';
 import { LocalStorageService } from '@app/core/services/local-storage/local-storage.service';
-import { Optional } from '@angular/core';
 
 export class LayoutStateModel {
   collapsed: boolean;
@@ -36,13 +35,12 @@ export class LayoutState {
   changeTheme(ctx: StateContext<LayoutStateModel>) {
     const state = ctx.getState();
     const theme = state.theme || LayoutState._localStorageService.getItem('theme');
-
     const themes: Record<string, string> = {
       'dark': 'light',
       'light': 'dark'
     };
 
-    this.localStorageService.addItem('theme', themes[theme]);
-    ctx.patchState({ theme: themes[theme] });
+    this.localStorageService.addItem('theme', themes[theme || 'dark']);
+    ctx.patchState({ theme: themes[theme || 'dark'] });
   }
 }

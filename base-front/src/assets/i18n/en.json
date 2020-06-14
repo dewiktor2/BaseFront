@@ -3,15 +3,28 @@
         "dashboard": "Dashboard",
         "login":"Login",
         "logout":"Logout",
-        "usersRoles":"Users and roles"
+        "usersRoles":"Users and roles",
+        "register":"Register"
     },
     "language": {
         "changed":"Lang changed"
     },
+    "modal": {
+        "operationConfirm":"Are you sure?",
+        "loginInfo":"Creditionals",
+        "yes":"Yes",
+        "noNeed":"Doesnt matter :)",
+        "close":"Close",
+        "cancel":"Cancel",
+        "logout":{
+            "logoutConfirmation":"Logout"
+        }     
+    },
     "loginPage": {
-        "username":"login",
-        "password":"password",
-        "usernameRequired":"login is required.",
-        "passwordRequired":"password is required."
+        "username":"Login",
+        "password":"Password",
+        "usernameRequired":"Login is required.",
+        "passwordRequired":"Password is required.",
+        "remindPassword":"Przypomnij hasło"
     }
 }

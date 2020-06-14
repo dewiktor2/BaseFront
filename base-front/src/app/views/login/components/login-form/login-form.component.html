@@ -1,5 +1,5 @@
-<div class="login-page">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+<!-- <div class="login-page"> -->
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
         <div class="form-group">
             <input type="text" formControlName="login" class="form-control"
                 placeholder="{{'loginPage.username' | translate}}" />
@@ -23,6 +23,36 @@
             <button nz-button nzType="primary" class="login-button" [disabled]="loginInProcess">
                 {{'nav.login' | translate}}
             </button>
+            <span class="register active-link">
+                {{'nav.register' | translate}}
+            </span>
         </div>
+    </form> -->
+<!-- </div> -->
+
+<div class="login-page">
+    <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
+        <nz-form-item>
+            <input type="text" nz-input formControlName="login" placeholder="{{'loginPage.username' | translate}}" />
+            <app-form-validator [control]="loginControl">
+                <app-form-control-validation [validation]="'required'">
+                    {{'loginPage.usernameRequired' | translate}}
+                </app-form-control-validation>
+            </app-form-validator>
+        </nz-form-item>
+        <nz-form-item>
+            <input type="password" nz-input formControlName="password"
+                placeholder="{{'loginPage.password' | translate}}" />
+            <app-form-validator [control]="passwordControl">
+                <app-form-control-validation [validation]="'required'">
+                    {{'loginPage.passwordRequired' | translate}}
+                </app-form-control-validation>
+            </app-form-validator>
+        </nz-form-item>
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
+            {{'nav.login' | translate}}
+        </button>
+        <!-- <span class="active-link"> <a> {{'loginPage.remindPassword' | translate}} </a></span> -->
+        <span class="active-link float-right"> <a> {{'nav.register' | translate}} </a></span>
     </form>
 </div>

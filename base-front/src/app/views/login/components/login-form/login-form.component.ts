@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { BaseModalComponent } from '@app/shared/containers/modal/base-modal.component';
+import { NzModalService } from 'ng-zorro-antd/modal';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -9,18 +11,19 @@ export class LoginFormComponent implements OnInit {
 
   @Input() loginInProcess: boolean;
   loginForm: FormGroup;
-  @Output() loginProcess = new EventEmitter<any>();
-
+  @Output() loginProcess = new EventEmitter<any>(); 
   get loginControl() { return this.loginForm.controls['login']}
   get passwordControl() { return this.loginForm.controls['password']}
   get isValid() { return this.loginForm.valid}
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       login: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      remember: false
     });
   }
 

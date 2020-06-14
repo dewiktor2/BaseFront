@@ -38,10 +38,6 @@ export class AppComponent implements OnInit {
     this.setLang();
   }
 
-  logout() {
-    this.login.logout();
-  }
-
   private setLang() {
     const memoryLang = this.localStorage.getItem(LANG_STATE);
     memoryLang ? this.changeLang(memoryLang) : this.changeLang("en");
