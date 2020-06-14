@@ -1,7 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
-const LOGO_SRC = './assets/logo/logo.png';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -10,8 +8,6 @@ const LOGO_SRC = './assets/logo/logo.png';
 export class LoginFormComponent implements OnInit {
 
   @Input() loginInProcess: boolean;
-  srcLogo = LOGO_SRC;
-
   loginForm: FormGroup;
   @Output() loginProcess = new EventEmitter<any>();
 

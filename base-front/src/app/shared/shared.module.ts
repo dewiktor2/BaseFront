@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormValidatorComponent } from './containers/form-validator/form-validator.component';
+import { FormControlValidationComponent } from './components/form-control-validation/form-control-validation.component';
 @NgModule({ 
-  declarations: [],
+  declarations: [
+    FormValidatorComponent,
+    FormControlValidationComponent
+  ],
   imports: [
-    CommonModule,
+    CommonModule
   ],
   exports: [
-    TranslateModule
+    TranslateModule,
+    FormValidatorComponent,
+    FormControlValidationComponent
   ],
 })
 export class SharedModule { }

@@ -12,8 +12,10 @@ export class LeftNavigationComponent {
     this._isCollapsed = isCollapsed;
     this.changeMenuListWidthStyle();
   }
+
   _isCollapsed: boolean;
   menuListWidth = {};
+
   @Output() logout = new EventEmitter();
 
   get isCollapsed() {
@@ -23,16 +25,10 @@ export class LeftNavigationComponent {
   constructor(private router: Router) { }
 
   changeMenuListWidthStyle() {
-    this.menuListWidth = this.isCollapsed
-      ? { 'width': '70px' }
-      : { 'width': '100%' };
+    this.menuListWidth = this.isCollapsed ? { 'width': '70px' } : { 'width': '100%' };
   }
 
   onLogout() {
     this.logout.emit();
-  }
-
-  goToPage(page: string) {
-    this.router.navigate([`${page}`])
   }
 }
