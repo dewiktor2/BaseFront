@@ -1,7 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { BaseModalComponent } from '@app/shared/containers/modal/base-modal.component';
-import { NzModalService } from 'ng-zorro-antd/modal';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
