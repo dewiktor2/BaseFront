@@ -174,11 +174,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-ng-zorro-antd
-MIT
-
-undefined
-
 core-js
 MIT
 Copyright (c) 2014-2020 Denis Pushkarev
@@ -210,6 +205,11 @@ date-fns is licensed under the [MIT license](http://kossnocorp.mit-license.org).
 Read more about MIT at [TLDRLegal](https://tldrlegal.com/license/mit-license).
 
 
+ng-zorro-antd
+MIT
+
+undefined
+
 ng-zorro-antd/avatar
 
 ng-zorro-antd/breadcrumb
@@ -220,7 +220,11 @@ ng-zorro-antd/divider
 
 ng-zorro-antd/dropdown
 
+ng-zorro-antd/form
+
 ng-zorro-antd/message
+
+ng-zorro-antd/modal
 
 ng-zorro-antd/page-header
 
