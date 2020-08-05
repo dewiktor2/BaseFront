@@ -1,10 +1,15 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import { MessageSeverity } from "src/app/models/toast/message-severity.type";
 import { Store } from "@ngxs/store";
 import { ToastActions } from "../../../common/state/toast/toast.actions";
 import { LocalStorageService } from '../../services/local-storage/local-storage.service';
-import { LANG_STATE } from 'src/app/app.component';
+import { LANG_STATE } from '@app/app.component';
+import { MessageSeverity } from '@app/models/toast/message-severity.type';
+
+interface LanguageModel {
+  text: string;
+  src: string;
+}
 
 @Component({
   selector: "app-language",
@@ -12,26 +17,34 @@ import { LANG_STATE } from 'src/app/app.component';
   styleUrls: ["./language.component.scss"]
 })
 export class LanguageComponent implements OnInit {
-  languages: {text:string, src: string}[] = [
-    {
-      text: 'en',
-      src: './assets/icons/flags/usa.png'
-    },
-    {
-      text: 'pl',
-      src: './assets/icons/flags/poland.png'
-    }
-  ]
+  @Input() theme: string;
+  languages: LanguageModel[] = [];
   currentLang: string;
-  constructor(private translate: TranslateService
-    , private localStorage: LocalStorageService
-    , private store: Store) {}
 
-  ngOnInit() {
-    this.currentLang = this.translate.currentLang;
+  get languageColor() {
+    return this.theme === 'dark'
+      ? { 'background-color': 'white', 'color': '#001529' }
+      : { 'background-color': '#1890ff' }
   }
 
-  languageSelection(lang: any) {
+  constructor(private translate: TranslateService
+    , private localStorage: LocalStorageService
+    , private store: Store) {
+  }
+
+  ngOnInit() {
+    this.setupLanguage();
+  }
+
+  setupLanguage() {
+    this.currentLang = this.translate.currentLang;
+    this.languages = [
+      { text: 'en', src: './assets/icons/flags/usa.png' },
+      { text: 'pl', src: './assets/icons/flags/poland.png' }
+    ]
+  }
+
+  languageSelection(lang: LanguageModel) {
     this.changeLang(lang.text);
     this.notify();
   }

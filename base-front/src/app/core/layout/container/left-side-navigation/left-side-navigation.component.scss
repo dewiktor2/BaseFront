@@ -1,24 +1,4 @@
-@import "variables";
-
-.main-title {
-  padding: 10px;
-}
-
-.logo-section {
-  text-align: center;
-}
-
-.application-logo {
-  width: 100%;
-  display: inline-block;
-  margin: 15px 15px;
-  max-width: 100px;
-  height: auto;
-}
-
-
-@media screen and (max-width: 600px) {
-  .logo-section {
-    text-align: left;
-  }
+.toggle {
+  display: flex;
+  flex-direction: column;
 }

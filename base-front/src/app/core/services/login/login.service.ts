@@ -1,16 +1,18 @@
 import { Injectable } from "@angular/core";
-import { LocalStorageService } from "../local-storage/local-storage.service";
-
+import { AuthService } from '@app/common/endpoints/auth/auth.endpoint';
+import { LocalStorageService } from '@app/core/services/local-storage/local-storage.service';
 export const AUTH_KEY = "auth_key";
 
 @Injectable({
   providedIn: "root"
 })
 export class LoginService {
-  constructor(private localStorage: LocalStorageService) {}
+  constructor(
+    private authService: AuthService,
+    private localStorage: LocalStorageService) {}
 
-  login(payload: { username: string; password: string }) {
-    this.localStorage.addItem(AUTH_KEY, JSON.stringify(payload));
+  login(payload: { login: string; password: string }) {
+    return this.authService.login(payload);
   }
 
   logout() {

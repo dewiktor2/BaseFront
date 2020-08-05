@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "deploy": "ng build --prod --base-href /BaseFront/ &&  npx ngh --dir=dist/base-front",
+    "deploy": "ng build --prod --base-href /BaseFront/ &&  npx ngh --no-silent --dir=dist/base-front",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -30,6 +30,7 @@
     "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
+    "ng-zorro-antd": "^8.5.2",
     "node-sass": "^4.13.0",
     "normalize.css": "^8.0.1",
     "rxjs": "~6.5.4",

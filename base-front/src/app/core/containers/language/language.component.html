@@ -1,9 +1,17 @@
 <div class="language-content">
-   <ng-container *ngFor="let language of languages">
-    <span class="language-circle">
-        <p (click)="languageSelection(language)" [class.active]="currentLang === language.text">
+    <a nz-dropdown  [nzDropdownMenu]="menu" nzTrigger="click">
+        <nz-avatar
+            [ngStyle]="languageColor"
+            [nzText]="currentLang | uppercase"
+            nzSize="small"
+            style="vertical-align: middle;">
+        </nz-avatar>
+    </a>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul class="language-dropdown" nz-menu>
+        <li nz-menu-item *ngFor="let language of languages" (click)="languageSelection(language)">
             <img class="language-icon" [src]="language.src">
-        </p>
-    </span>
-   </ng-container>
+        </li>
+        </ul>
+    </nz-dropdown-menu>
 </div>

@@ -14,20 +14,42 @@
     .login-button {
       width: 50%;
       transform: translate(50%, 20%);
-      border-radius: 25px;
-      background: $blue;
+      border: 0px;
+      border-radius: 1.5rem;
+      background: $dark-blue;
       color: $white;
     }
-  }
-  .logo {
-    height: 10rem;
-    width: 10rem;
+    .register {
+      position: absolute;
+      display: inline;
+      transform: translate(50%, 50%);
+      padding-left: 1.2rem;
+      padding-top: 1rem;
+      font-size: 14px;
+      left: 0;
+    }
   }
 }
 
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
 input {
-    text-align: left;
-    border-radius: 25px;
+  text-align: left;
+  border-radius: 1.5rem;
 }
 
 @media (max-width: 500px) {

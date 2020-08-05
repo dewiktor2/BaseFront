@@ -1,0 +1,51 @@
+@import "variables";
+.navigation-wrapper {
+  width: 150px;
+
+  .ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    color: $orange;
+    background-color: $dark-blue;
+    border-right: 0.1rem solid $orange;
+  }
+
+  .ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    color: $blue;
+    background-color: #ffff;
+    border-right: 0.1rem solid $blue;
+  }
+
+  .ant-menu {
+    &-dark {
+      .ant-menu-item {
+        :hover {
+          color: $orange;
+        }
+        &-selected {
+          > a {
+            color: $orange;
+          }
+          ::after {
+            border-right: 0;
+          }
+        }
+      }
+    }
+    &-light {
+      .ant-menu-item :hover {
+        color: $blue;
+      }
+      .ant-menu-item-selected::after {
+        border-right: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+      border: 0px;
+    }
+    .ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item-selected {
+      border: 0px;
+    }
+  }
+}

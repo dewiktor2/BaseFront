@@ -1,9 +1,13 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import { Store } from "@ngxs/store";
+import { Store, Select } from "@ngxs/store";
 import { RouterActions } from "./common/state/router/router.actions";
 import { LocalStorageService } from "./core/services/local-storage/local-storage.service";
 import { LoginService } from "./core/services/login/login.service";
+import { ToastState } from './common/state/toast/toast.state';
+import { Observable, of } from 'rxjs';
+import { ToastMessage } from './models/toast/message.interface';
+import { LayoutState } from './common/state/layout/layout.state';
 export const LANG_STATE = "lang_state";
 @Component({
   selector: "app-root",
@@ -11,9 +15,15 @@ export const LANG_STATE = "lang_state";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
+  @Select(ToastState.toast) toast$: Observable<ToastMessage>;
   title = "baseFront";
+
   get loggedIn() {
     return this.login.isLoggedIn();
+  }
+
+  get themeClass() {
+    return this.store.selectSnapshot(LayoutState.theme) === 'dark' ? 'dark' : 'light';
   }
 
   constructor(
@@ -28,12 +38,8 @@ export class AppComponent implements OnInit {
     this.setLang();
   }
 
-  logout() {
-    this.login.logout();
-  }
-
   private setLang() {
-    let memoryLang = this.localStorage.getItem(LANG_STATE);
+    const memoryLang = this.localStorage.getItem(LANG_STATE);
     memoryLang ? this.changeLang(memoryLang) : this.changeLang("en");
   }
 

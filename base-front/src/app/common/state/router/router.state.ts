@@ -1,6 +1,8 @@
 import { State, Selector, Action, StateContext } from '@ngxs/store';
 import { RouterActions } from './router.actions';
-import { Router, NavigationStart } from '@angular/router';
+import { Router, NavigationStart, Event } from '@angular/router';
+import { NgZone } from '@angular/core';
+import { tap, filter, map } from 'rxjs/operators';
 export class RouterStateModel {
     navigationUrl: string;
 }
@@ -11,7 +13,8 @@ export class RouterStateModel {
 })
 export class RouterState {
 
-    constructor(private router: Router) {}
+    constructor(private router: Router,
+        private ngZone: NgZone) { }
 
     @Selector() static navigationUrl(state: RouterStateModel) {
         return state.navigationUrl;
@@ -19,12 +22,12 @@ export class RouterState {
 
     @Action(RouterActions.ListenNavigationEvent)
     listenNavigationEvent(ctx: StateContext<RouterStateModel>) {
-        this.router.events.subscribe(e => {
-            if(e instanceof NavigationStart) {
-               ctx.patchState( {
-                   navigationUrl: e.url
-               });
-            }
+        this.ngZone.runOutsideAngular(() => {
+            this.router.events.pipe(
+                filter((e: Event) => e instanceof NavigationStart),
+                map(e => <NavigationStart>e),
+                tap(({ url }: NavigationStart) => ctx.patchState({ navigationUrl: url }))
+            ).subscribe();
         });
     }
 }

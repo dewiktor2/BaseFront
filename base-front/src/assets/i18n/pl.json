@@ -2,15 +2,29 @@
     "nav": {
         "dashboard": "Dashboard",
         "login":"Zaloguj",
-        "logout":"Wyloguj"
+        "logout":"Wyloguj",
+        "usersRoles":"Uzytkownicy i role",
+        "register":"Rejestracja"
+    },
+    "modal": {
+        "operationConfirm":"Czy jesteś pewny?",
+        "loginInfo":"Dane do zalogowania",
+        "noNeed":"Obojętnie :)",
+        "yes":"Tak",
+        "close":"Zamknij",
+        "cancel":"Anuluj",
+        "logout":{
+            "logoutConfirmation":"Wylogowanie"
+        }     
     },
     "language": {
         "changed":"Zmieniono język"
     },
     "loginPage": {
-        "username":"login",
-        "password":"hasło",
-        "usernameRequired":"login jest wymagany.",
-        "passwordRequired":"hasło jest wymagane."
+        "username":"Login",
+        "password":"Hasło",
+        "usernameRequired":"Login jest wymagany.",
+        "passwordRequired":"Hasło jest wymagane.",
+        "remindPassword":"Przypomnij hasło"
     }
 }

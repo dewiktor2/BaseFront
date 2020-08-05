@@ -6,13 +6,16 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
+    data: {
+      breadcrumb: 'Dashboard' 
+    },
     canActivate: [AuthGuardService]
   },
   {
     path: 'login',
     loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule)
   },
-  { path: '**', redirectTo: '', canActivate: [AuthGuardService] }
+  { path: '**', redirectTo: '', data: {breadcrumb: 'Home'}, canActivate: [AuthGuardService] }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
