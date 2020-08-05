@@ -7,9 +7,8 @@ import { LayoutState } from '@app/common/state/layout/layout.state';
 import { LoginService } from '@app/core/services/login/login.service';
 import { LayoutActions } from '@app/common/state/layout/layout.actions';
 import { tap, delay, filter } from 'rxjs/operators';
-import { NzModalService, NzModalRef } from 'ng-zorro-antd/modal';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { ResolvedStaticSymbol } from '@angular/compiler';
 import { AntdModalInvokerService } from '@app/core/services/modal/antd-modal-invoker.service';
 
 @Component({

@@ -1,11 +1,11 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Store, Select } from "@ngxs/store";
 import { RouterActions } from "./common/state/router/router.actions";
 import { LocalStorageService } from "./core/services/local-storage/local-storage.service";
 import { LoginService } from "./core/services/login/login.service";
 import { ToastState } from './common/state/toast/toast.state';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ToastMessage } from './models/toast/message.interface';
 import { LayoutState } from './common/state/layout/layout.state';
 export const LANG_STATE = "lang_state";

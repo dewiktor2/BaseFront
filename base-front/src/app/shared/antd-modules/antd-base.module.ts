@@ -19,7 +19,6 @@ const icons: IconDefinition[] = [ MenuFoldOutline, MenuUnfoldOutline, DashOutlin
     , NzInputModule
     , NzCheckboxModule
     , NzModalModule
-    , NzModalModule
   ],
   exports: [
     NzButtonModule
