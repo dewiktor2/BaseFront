@@ -1,6 +1,7 @@
 import { State, Selector, Action, StateContext } from "@ngxs/store";
 import { LayoutActions } from './layout.actions';
 import { LocalStorageService } from '@app/core/services/local-storage/local-storage.service';
+import { Injectable } from '@angular/core';
 
 export class LayoutStateModel {
   collapsed: boolean;
@@ -14,6 +15,7 @@ export class LayoutStateModel {
   name: "layout",
   defaults: new LayoutStateModel()
 })
+@Injectable()
 export class LayoutState {
   private static _localStorageService: LocalStorageService;
   constructor(private localStorageService: LocalStorageService) {

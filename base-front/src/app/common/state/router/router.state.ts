@@ -3,6 +3,8 @@ import { RouterActions } from './router.actions';
 import { Router, NavigationStart, Event } from '@angular/router';
 import { NgZone } from '@angular/core';
 import { tap, filter, map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+
 export class RouterStateModel {
     navigationUrl: string;
 }
@@ -11,6 +13,7 @@ export class RouterStateModel {
     name: 'navigationRoute',
     defaults: new RouterStateModel()
 })
+@Injectable()
 export class RouterState {
 
     constructor(private router: Router,
