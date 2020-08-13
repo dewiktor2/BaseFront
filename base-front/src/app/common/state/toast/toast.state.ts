@@ -1,6 +1,7 @@
 import { State, Selector, Action, StateContext } from "@ngxs/store";
 import { ToastActions } from "./toast.actions";
 import { ToastMessage } from '@app/models/toast/message.interface';
+import { Injectable } from '@angular/core';
 
 export class ToastStateModel {
   toast: ToastMessage;
@@ -11,6 +12,7 @@ export class ToastStateModel {
   name: "toast",
   defaults: new ToastStateModel()
 })
+@Injectable()
 export class ToastState {
   constructor() { }
   @Selector() static toast(state: ToastStateModel) {

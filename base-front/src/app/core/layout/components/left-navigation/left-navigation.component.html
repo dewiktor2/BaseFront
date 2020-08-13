@@ -1,6 +1,6 @@
 <section class="navigation-wrapper">
   <ul [ngStyle]="menuListWidth" nz-menu nzMode="inline" nzTheme="{{theme}}" [nzInlineCollapsed]="isCollapsed">
-    <li class="menu-list-item" nz-menu-item nz-tooltip nzPlacement="right" (click)="onLogout()">
+    <li class="menu-list-item" nz-menu-item nz-tooltip nzTooltipPlacement="right" (click)="onLogout()">
       <span *ngIf="isCollapsed" class="menu-icon">
         <i class="fa fa-sign-out-alt"></i>
       </span>
@@ -8,7 +8,7 @@
         {{ "nav.logout" | translate }}
       </span>
     </li>
-    <li class="menu-list-item" nz-menu-item nz-tooltip nzPlacement="right" nzMatchRouter>
+    <li class="menu-list-item" nz-menu-item nz-tooltip nzTooltipPlacement="right" nzMatchRouter>
       <a *ngIf="isCollapsed" class="menu-icon" [routerLink]="['/dashboard']">
         <i class="fas fa-clipboard"></i>
       </a>
