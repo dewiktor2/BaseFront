@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NzModalService, NzModalRef, OnClickCallback } from 'ng-zorro-antd/modal';
+import { NzModalService, NzModalRef } from 'ng-zorro-antd/modal';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 

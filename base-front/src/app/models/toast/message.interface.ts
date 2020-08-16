@@ -1,5 +1,5 @@
-import { MessageSeverity } from "./message-severity.type";
 import { TemplateRef } from '@angular/core';
+import { MessageSeverity } from './message-severity.type';
 
 export interface ToastMessage {
     toastHeader?: string;

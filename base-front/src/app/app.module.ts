@@ -10,29 +10,37 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxsModule } from '@ngxs/store';
-import { ToastState } from './common/state/toast/toast.state';
-import { RouterState } from './common/state/router/router.state';
-import { LayoutState } from './common/state/layout/layout.state';
+import { ToastState } from '@common/state/toast/toast.state';
+import { RouterState } from '@common/state/router/router.state';
+import { LayoutState } from '@common/state/layout/layout.state';
+
+const angularModules = [
+  BrowserModule,
+  BrowserAnimationsModule,
+  HttpClientModule,
+  AppRoutingModule,
+  ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+];
+
+const i18Module = [
+  TranslateModule.forRoot({
+    loader: {
+      provide: TranslateLoader,
+      useFactory: HttpLoaderFactory,
+      deps: [HttpClient]
+    }
+  })
+]
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AppRoutingModule,
+    ...angularModules,
+    ...i18Module,
     CoreModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    [NgxsModule.forRoot([ToastState, RouterState, LayoutState],{ developmentMode: !environment.production })]
+    [NgxsModule.forRoot([ToastState, RouterState, LayoutState], { developmentMode: !environment.production })]
   ],
   bootstrap: [AppComponent]
 })

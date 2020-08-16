@@ -1,7 +1,7 @@
 import { State, Selector, Action, StateContext } from "@ngxs/store";
 import { ToastActions } from "./toast.actions";
-import { ToastMessage } from '@app/models/toast/message.interface';
 import { Injectable } from '@angular/core';
+import { ToastMessage } from '@models/toast/message.interface';
 
 export class ToastStateModel {
   toast: ToastMessage;

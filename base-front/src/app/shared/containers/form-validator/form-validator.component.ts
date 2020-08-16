@@ -7,7 +7,7 @@ import {
   ChangeDetectionStrategy
 } from "@angular/core";
 import { AbstractControl } from '@angular/forms';
-import { FormControlValidationComponent } from '../../components/form-control-validation/form-control-validation.component';
+import { FormControlValidationComponent } from '@shared/components/form-control-validation/form-control-validation.component';
 @Component({
   selector: "app-form-validator",
   templateUrl: './form-validator.component.html',
@@ -17,14 +17,16 @@ import { FormControlValidationComponent } from '../../components/form-control-va
 export class FormValidatorComponent implements AfterContentChecked {
   @ContentChildren(FormControlValidationComponent) childs: QueryList<FormControlValidationComponent>
   @Input() control: AbstractControl;
-  constructor() {
-  }
+  
+  constructor() {}
 
   ngAfterContentChecked() {
-    this.childs.forEach((child: FormControlValidationComponent) => {
-      child.visible = this.control.invalid &&
-        (this.control.dirty || this.control.touched) &&
-        this.control.hasError(child.validation);
-    });
+    this.childs.forEach((child: FormControlValidationComponent) => this.setChildVisibility(child));
+  }
+
+  private setChildVisibility(child: FormControlValidationComponent) {
+    child.visible = this.control.invalid &&
+      (this.control.dirty || this.control.touched) &&
+      this.control.hasError(child.validation);
   }
 }

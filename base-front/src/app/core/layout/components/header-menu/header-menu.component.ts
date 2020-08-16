@@ -1,8 +1,10 @@
-import { Component, OnInit, HostListener, Input, Renderer2, NgZone } from "@angular/core";
+import { Component, OnInit, Renderer2 } from "@angular/core";
 import { Select, Store } from "@ngxs/store";
 import { Observable } from "rxjs";
-import { LayoutActions } from '@app/common/state/layout/layout.actions';
-import { RouterState } from '@app/common/state/router/router.state';
+import { tap, filter } from 'rxjs/operators';
+import { RouterState } from '@common/state/router/router.state';
+import { LayoutActions } from '@common/state/layout/layout.actions';
+
 @Component({
   selector: "app-header-menu",
   templateUrl: "./header-menu.component.html",
@@ -24,7 +26,7 @@ export class HeaderMenuComponent implements OnInit {
     this.navigationUrlListener();
   }
 
-  onToggleChange() {
+  handleToggleChange() {
     this.toggle = !this.toggle;
   }
 
@@ -35,11 +37,10 @@ export class HeaderMenuComponent implements OnInit {
   }
 
   navigationUrlListener() {
-    this.navigationUrl$.subscribe(() => {
-      if (this.toggle && window.innerWidth <= HeaderMenuComponent.HAMBURGER_TOGGLE_WIDTH) {
-        this.toggle = false;
-      }
-    });
+    this.navigationUrl$.pipe(
+      filter(() => this.toggle && window.innerWidth <= HeaderMenuComponent.HAMBURGER_TOGGLE_WIDTH),
+      tap(() => this.toggle = false)
+    ).subscribe();
   }
 
   changeToggleEvent() {

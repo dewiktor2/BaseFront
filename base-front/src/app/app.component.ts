@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Store, Select } from "@ngxs/store";
-import { RouterActions } from "./common/state/router/router.actions";
-import { LocalStorageService } from "./core/services/local-storage/local-storage.service";
-import { LoginService } from "./core/services/login/login.service";
-import { ToastState } from './common/state/toast/toast.state';
-import { Observable, of } from 'rxjs';
-import { ToastMessage } from './models/toast/message.interface';
-import { LayoutState } from './common/state/layout/layout.state';
+import { Observable } from 'rxjs';
+import { LoginService } from '@core/services/login/login.service';
+import { LocalStorageService } from '@core/services/local-storage/local-storage.service';
+import { ToastState } from '@common/state/toast/toast.state';
+import { LayoutState } from '@common/state/layout/layout.state';
+import { RouterActions } from '@common/state/router/router.actions';
+import { ToastMessage } from '@models/toast/message.interface';
 export const LANG_STATE = "lang_state";
 @Component({
   selector: "app-root",

@@ -1,15 +1,16 @@
 import { Component, ViewChild, OnInit, OnDestroy } from "@angular/core";
 import { Router } from "@angular/router";
-import { Select, Store, Actions, ofActionCompleted, ofActionSuccessful } from '@ngxs/store';
+import { Select, Store, Actions, ofActionSuccessful } from '@ngxs/store';
 import { Observable, of, Subscription } from 'rxjs';
 import { HeaderMenuComponent } from '../../components/header-menu/header-menu.component';
-import { LayoutState } from '@app/common/state/layout/layout.state';
-import { LoginService } from '@app/core/services/login/login.service';
-import { LayoutActions } from '@app/common/state/layout/layout.actions';
 import { tap, delay, filter } from 'rxjs/operators';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { AntdModalInvokerService } from '@app/core/services/modal/antd-modal-invoker.service';
+import { AntdModalInvokerService } from '@core/services/modal/antd-modal-invoker.service';
+import { LayoutState } from '@common/state/layout/layout.state';
+import { LoginService } from '@core/services/login/login.service';
+import { LayoutActions } from '@common/state/layout/layout.actions';
+
 
 @Component({
   selector: "app-left-side-navigation",
