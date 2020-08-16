@@ -1,6 +1,6 @@
 <div class="whole-page">
   <ng-container *ngIf="loggedIn">
-      <app-left-side-navigation></app-left-side-navigation>
+    <app-left-side-navigation></app-left-side-navigation>
   </ng-container>
   <!--- Main App content-->
   <div class="content-space" [ngClass]="themeClass">
@@ -8,6 +8,10 @@
     <ng-container *ngIf="toast$ | async as toast">
       <app-message-info [toast]="toast"></app-message-info>
     </ng-container>
-    <router-outlet></router-outlet>
+    <div [@.disabled]="animationDisabled">
+      <main [@routeAnimations]="getState(o)">
+        <router-outlet #o="outlet"></router-outlet>
+      </main>
+    </div>
   </div>
 </div>
