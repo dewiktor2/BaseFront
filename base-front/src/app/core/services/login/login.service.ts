@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { AuthService } from '@app/common/endpoints/auth/auth.endpoint';
-import { LocalStorageService } from '@app/core/services/local-storage/local-storage.service';
+import { AuthService } from '@common/endpoints/auth/auth.endpoint';
+import { LocalStorageService } from '../local-storage/local-storage.service';
 export const AUTH_KEY = "auth_key";
 
 @Injectable({
@@ -9,17 +9,11 @@ export const AUTH_KEY = "auth_key";
 export class LoginService {
   constructor(
     private authService: AuthService,
-    private localStorage: LocalStorageService) {}
+    private localStorage: LocalStorageService) { }
 
-  login(payload: { login: string; password: string }) {
-    return this.authService.login(payload);
-  }
+  login = (payload: { login: string; password: string }) => this.authService.login(payload);
 
-  logout() {
-    this.localStorage.removeItem(AUTH_KEY);
-  }
+  logout = () => this.localStorage.removeItem(AUTH_KEY);
 
-  isLoggedIn() {
-    return this.localStorage.getItem(AUTH_KEY) ? true : false;
-  }
+  isLoggedIn = () => this.localStorage.getItem(AUTH_KEY) ? true : false;
 }

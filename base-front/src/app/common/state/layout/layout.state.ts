@@ -1,12 +1,13 @@
 import { State, Selector, Action, StateContext } from "@ngxs/store";
 import { LayoutActions } from './layout.actions';
-import { LocalStorageService } from '@app/core/services/local-storage/local-storage.service';
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from '@core/services/local-storage/local-storage.service';
 
 export class LayoutStateModel {
   collapsed: boolean;
   theme: string;
   constructor() {
+    this.theme = 'dark';
     this.collapsed = true;
   }
 }

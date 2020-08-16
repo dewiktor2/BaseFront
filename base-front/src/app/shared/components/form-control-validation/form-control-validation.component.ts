@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
-export type ValidationType = 'required';
+
+type ValidationType = 'required';
 
 @Component({
   selector: "app-form-control-validation",

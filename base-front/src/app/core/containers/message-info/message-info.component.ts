@@ -1,12 +1,11 @@
 import { Component, Input, ViewEncapsulation } from "@angular/core";
 import { NzMessageService } from "ng-zorro-antd/message";
-import { MessageSeverity } from '@app/models/toast/message-severity.type';
-import { ToastMessage } from '@app/models/toast/message.interface';
+import { ToastMessage } from '@models/toast/message.interface';
+import { MessageSeverity } from '@models/toast/message-severity.type';
 
 @Component({
   selector: "app-message-info",
-  templateUrl: "./message-info.component.html",
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./message-info.component.html"
 })
 export class MessageInfoComponent {
   @Input() set toast(toast: ToastMessage) {

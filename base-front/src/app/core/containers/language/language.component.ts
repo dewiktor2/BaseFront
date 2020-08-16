@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Store } from "@ngxs/store";
-import { ToastActions } from "../../../common/state/toast/toast.actions";
-import { LocalStorageService } from '../../services/local-storage/local-storage.service';
-import { LANG_STATE } from '@app/app.component';
-import { MessageSeverity } from '@app/models/toast/message-severity.type';
+import { LANG_STATE } from 'app/app.component';
+import { LocalStorageService } from '@core/services/local-storage/local-storage.service';
+import { ToastActions } from '@common/state/toast/toast.actions';
+import { MessageSeverity } from '@models/toast/message-severity.type';
 
 interface LanguageModel {
   text: string;

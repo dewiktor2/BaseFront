@@ -1,6 +1,10 @@
 <div class="header-menu">
-  <span *ngIf="currentWidth <= 600 " class="application-logo">BaseFront</span>
-  <div class="hamburger-container" [ngClass]="{ change: toggle }" (click)="onToggleChange()">
-    <i class="fas fa-bars"></i>
-  </div>
+  <ng-container *ngIf="currentWidth <= 600">
+    <span class="application-logo">
+      BaseFront
+    </span>
+    <div class="hamburger-container" [ngClass]="{ change: toggle }" (click)="handleToggleChange()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </ng-container>
 </div>
