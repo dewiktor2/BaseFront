@@ -18,7 +18,7 @@ export const LANG_STATE = "lang_state";
   animations: [fader]
 })
 export class AppComponent implements OnInit {
-  @Select(ToastState.toast) toąast$: Observable<ToastMessage>;
+  @Select(ToastState.toast) toast$: Observable<ToastMessage>;
   title = "baseFront";
 
   animationDisabled: boolean;
