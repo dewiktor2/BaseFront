@@ -4,7 +4,8 @@
         "login":"Zaloguj",
         "logout":"Wyloguj",
         "usersRoles":"Uzytkownicy i role",
-        "register":"Rejestracja"
+        "register":"Rejestracja",
+        "test":"Test"
     },
     "modal": {
         "operationConfirm":"Czy jesteś pewny?",

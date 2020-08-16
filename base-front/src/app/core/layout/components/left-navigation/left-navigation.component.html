@@ -16,5 +16,13 @@
         <a [routerLink]="['/dashboard']"> {{ "nav.dashboard" | translate }} </a>
       </ng-template>
     </li>
+    <li class="menu-list-item" nz-menu-item nz-tooltip nzTooltipPlacement="right" nzMatchRouter>
+      <a *ngIf="isCollapsed;else testCollapsed" class="menu-icon" [routerLink]="['/test']">
+        <i class="fas fa-sad-cry"></i>
+      </a>
+      <ng-template #testCollapsed>
+        <a [routerLink]="['/test']"> {{ "nav.test" | translate }} </a>
+      </ng-template>
+    </li>
   </ul>
 </section>

@@ -1,22 +1,27 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Store, Select } from "@ngxs/store";
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { LoginService } from '@core/services/login/login.service';
 import { LocalStorageService } from '@core/services/local-storage/local-storage.service';
 import { ToastState } from '@common/state/toast/toast.state';
 import { LayoutState } from '@common/state/layout/layout.state';
 import { RouterActions } from '@common/state/router/router.actions';
 import { ToastMessage } from '@models/toast/message.interface';
+import { fader } from '@shared/animations/component-animation';
+import { tap } from 'rxjs/operators';
 export const LANG_STATE = "lang_state";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  styleUrls: ["./app.component.scss"],
+  animations: [fader]
 })
 export class AppComponent implements OnInit {
-  @Select(ToastState.toast) toast$: Observable<ToastMessage>;
+  @Select(ToastState.toast) toąast$: Observable<ToastMessage>;
   title = "baseFront";
+
+  animationDisabled: boolean;
 
   get loggedIn() {
     return this.login.isLoggedIn();
@@ -30,12 +35,19 @@ export class AppComponent implements OnInit {
     private translate: TranslateService,
     private store: Store,
     private localStorage: LocalStorageService,
-    private login: LoginService
-  ) {}
+    private login: LoginService,
+  ) { }
 
   ngOnInit() {
     this.store.dispatch(new RouterActions.ListenNavigationEvent());
     this.setLang();
+    this.store.select(LayoutState.collapsed).pipe(
+      tap(collapsed => this.animationDisabled = collapsed ? false : true)
+    ).subscribe();
+  }
+
+  getState(outlet: any) {
+    return outlet.activatedRouteData.state;
   }
 
   private setLang() {

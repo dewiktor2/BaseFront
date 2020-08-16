@@ -4,7 +4,8 @@
         "login":"Login",
         "logout":"Logout",
         "usersRoles":"Users and roles",
-        "register":"Register"
+        "register":"Register",
+        "test":"Test"
     },
     "language": {
         "changed":"Lang changed"

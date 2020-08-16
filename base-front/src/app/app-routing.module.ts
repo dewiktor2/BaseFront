@@ -7,7 +7,17 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
     data: {
-      breadcrumb: 'Dashboard' 
+      breadcrumb: 'Dashboard',
+      state: 'Dashboard'
+    },
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./views/test/test.module').then(m => m.TestModule),
+    data: {
+      breadcrumb: 'Test',
+      state: 'Test'
     },
     canActivate: [AuthGuardService]
   },
