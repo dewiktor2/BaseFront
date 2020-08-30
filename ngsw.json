@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1598783924875,
+  "timestamp": 1598801673352,
   "index": "/BaseFront/index.html",
   "assetGroups": [
     {
@@ -18,8 +18,8 @@
         "/BaseFront/common-es5.afaeeb780e9995efbac3.js",
         "/BaseFront/favicon.ico",
         "/BaseFront/index.html",
-        "/BaseFront/main-es2015.914039b702f28ecf584f.js",
-        "/BaseFront/main-es5.914039b702f28ecf584f.js",
+        "/BaseFront/main-es2015.b14ab241614ff213a981.js",
+        "/BaseFront/main-es5.b14ab241614ff213a981.js",
         "/BaseFront/polyfills-es2015.32b231e25d3ac4183817.js",
         "/BaseFront/polyfills-es5.17ec24e166cad86255d9.js",
         "/BaseFront/runtime-es2015.0dde37e6727deaa30ec3.js",
@@ -76,9 +76,9 @@
     "/BaseFront/common-es2015.afaeeb780e9995efbac3.js": "4c0860e2f0f2e9492a748c9edd51cdb28c450b0d",
     "/BaseFront/common-es5.afaeeb780e9995efbac3.js": "a7e20d2aa29cf4b656edbdbcc2c95443781e2dfa",
     "/BaseFront/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/BaseFront/index.html": "910625792154111ae1e70bc70fc98de13d2ee2e2",
-    "/BaseFront/main-es2015.914039b702f28ecf584f.js": "6c7abbd9d8d61a88e4538f7c5453c971500e319f",
-    "/BaseFront/main-es5.914039b702f28ecf584f.js": "e3881a82af3c9e1afb3a22b5e7497cab4aa9b00a",
+    "/BaseFront/index.html": "5f0689550fba97bf4ce59500b622297ef143287a",
+    "/BaseFront/main-es2015.b14ab241614ff213a981.js": "2f6e957c115dced94bfd980d35fd76f7803ec6ce",
+    "/BaseFront/main-es5.b14ab241614ff213a981.js": "d8bada12d1ec0147aab21c23870aa34a149f65d7",
     "/BaseFront/polyfills-es2015.32b231e25d3ac4183817.js": "cab0dd1333f2b29753564792363c8deac08c14d6",
     "/BaseFront/polyfills-es5.17ec24e166cad86255d9.js": "e9b204cbc753b168c3c7297e916ede70f82671e7",
     "/BaseFront/runtime-es2015.0dde37e6727deaa30ec3.js": "2d40e8462fcc4f312ef22fb46dcb5e304640284d",
