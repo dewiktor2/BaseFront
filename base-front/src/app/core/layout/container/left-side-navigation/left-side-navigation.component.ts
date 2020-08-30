@@ -26,7 +26,8 @@ export class LeftSideNavigationComponent implements OnInit, OnDestroy {
   @Select(LayoutState.theme) theme$: Observable<string>
   @Select(ConfigState.menuItems) menuItems$: Observable<MenuItem[]>;
 
-  subscription$: Subscription;
+  menuSubscription: Subscription;
+  menuCollapseSubscription: Subscription;
   menuClass: string;
   toggleClass: string;
   menuIcon: string;
@@ -58,7 +59,8 @@ export class LeftSideNavigationComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscription$.unsubscribe()
+    this.menuSubscription && this.menuSubscription.unsubscribe();
+    this.menuCollapseSubscription && this.menuCollapseSubscription.unsubscribe();
   }
 
   changeTheme() {
@@ -66,7 +68,7 @@ export class LeftSideNavigationComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.subscription$ = this.confirmLogout().afterClose.pipe(
+    this.menuCollapseSubscription = this.confirmLogout().afterClose.pipe(
       tap(console.log),
       filter(result => result),
       tap(() => {
@@ -84,7 +86,8 @@ export class LeftSideNavigationComponent implements OnInit, OnDestroy {
     return this.antdModalService.showConfirm(
       translations['nzTitle'],
       translations['nzContent'],
-      () => of(true));
+      () => of(true)
+    );
   }
 
   toggleCollapsed(): void {
@@ -92,7 +95,7 @@ export class LeftSideNavigationComponent implements OnInit, OnDestroy {
   }
 
   collapseActionListener() {
-    this.actions$.pipe(
+    this.menuSubscription = this.actions$.pipe(
       ofActionSuccessful(
         LayoutActions.CollapseMenu,
         LayoutActions.ChangeTheme

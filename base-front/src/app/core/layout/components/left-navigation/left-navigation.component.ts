@@ -5,7 +5,6 @@ import {
   EventEmitter,
   Input
 } from '@angular/core';
-import { Router } from '@angular/router';
 import { MenuItem } from '@core/services/app-config/models/menu-item.model';
 @Component({
   selector: 'app-left-navigation',
@@ -30,7 +29,7 @@ export class LeftNavigationComponent {
     return this._isCollapsed;
   }
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   changeMenuListWidthStyle() {
     this.menuListWidth = this.isCollapsed ? { 'width': '70px' } : { 'width': '100%' };

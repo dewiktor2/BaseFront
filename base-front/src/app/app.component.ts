@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit, Inject, OnDestroy } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Store, Select } from "@ngxs/store";
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
 import { LoginService } from '@core/services/login/login.service';
 import { LocalStorageService } from '@core/services/local-storage/local-storage.service';
 import { ToastState } from '@common/state/toast/toast.state';
@@ -17,9 +17,10 @@ export const LANG_STATE = "lang_state";
   styleUrls: ["./app.component.scss"],
   animations: [fader]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   @Select(ToastState.toast) toast$: Observable<ToastMessage>;
   title = "baseFront";
+  collapseSub: Subscription;
 
   animationDisabled: boolean;
 
@@ -38,10 +39,14 @@ export class AppComponent implements OnInit {
     private login: LoginService,
   ) { }
 
+  ngOnDestroy() {
+    this.collapseSub && this.collapseSub.unsubscribe();
+  }
+
   ngOnInit() {
     this.store.dispatch(new RouterActions.ListenNavigationEvent());
     this.setLang();
-    this.store.select(LayoutState.collapsed).pipe(
+    this.collapseSub = this.store.select(LayoutState.collapsed).pipe(
       tap(collapsed => this.animationDisabled = collapsed ? false : true)
     ).subscribe();
   }
