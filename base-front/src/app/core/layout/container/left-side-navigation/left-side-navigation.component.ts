@@ -10,6 +10,8 @@ import { AntdModalInvokerService } from '@core/services/modal/antd-modal-invoker
 import { LayoutState } from '@common/state/layout/layout.state';
 import { LoginService } from '@core/services/login/login.service';
 import { LayoutActions } from '@common/state/layout/layout.actions';
+import { ConfigState } from '@common/state/config/config.state';
+import { MenuItem } from '@core/services/app-config/models/menu-item.model';
 
 
 @Component({
@@ -22,6 +24,7 @@ export class LeftSideNavigationComponent implements OnInit, OnDestroy {
   @ViewChild(HeaderMenuComponent, { static: true }) headerMenuComponent: HeaderMenuComponent;
   @Select(LayoutState.collapsed) collapsed$: Observable<boolean>;
   @Select(LayoutState.theme) theme$: Observable<string>
+  @Select(ConfigState.menuItems) menuItems$: Observable<MenuItem[]>;
 
   subscription$: Subscription;
   menuClass: string;

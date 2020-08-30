@@ -6,6 +6,7 @@ import {
   Input
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuItem } from '@core/services/app-config/models/menu-item.model';
 @Component({
   selector: 'app-left-navigation',
   templateUrl: './left-navigation.component.html',
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class LeftNavigationComponent {
   @Input() theme: string;
+  @Input() menuItems: MenuItem[];
   @Input() set isCollapsed(isCollapsed: boolean) {
     this._isCollapsed = isCollapsed;
     this.changeMenuListWidthStyle();

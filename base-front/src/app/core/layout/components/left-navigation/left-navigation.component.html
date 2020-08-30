@@ -8,21 +8,15 @@
         {{ "nav.logout" | translate }}
       </ng-template>
     </li>
-    <li class="menu-list-item" nz-menu-item nz-tooltip nzTooltipPlacement="right" nzMatchRouter>
-      <a *ngIf="isCollapsed;else dashboardCollapsed" class="menu-icon" [routerLink]="['/dashboard']">
-        <i class="fas fa-clipboard"></i>
-      </a>
-      <ng-template #dashboardCollapsed>
-        <a [routerLink]="['/dashboard']"> {{ "nav.dashboard" | translate }} </a>
-      </ng-template>
-    </li>
-    <li class="menu-list-item" nz-menu-item nz-tooltip nzTooltipPlacement="right" nzMatchRouter>
-      <a *ngIf="isCollapsed;else testCollapsed" class="menu-icon" [routerLink]="['/test']">
-        <i class="fas fa-sad-cry"></i>
-      </a>
-      <ng-template #testCollapsed>
-        <a [routerLink]="['/test']"> {{ "nav.test" | translate }} </a>
-      </ng-template>
-    </li>
+    <ng-container *ngFor="let item of menuItems">
+      <li class="menu-list-item" nz-menu-item nz-tooltip nzTooltipPlacement="right" nzMatchRouter>
+        <a *ngIf="isCollapsed;else menuItem" class="menu-icon" [routerLink]="[ item.url ]">
+          <i class="{{item.icon}}"></i>
+        </a>
+        <ng-template #menuItem>
+          <a [routerLink]="[ item.url ]"> {{ item.translation | translate }} </a>
+        </ng-template>
+      </li>
+    </ng-container>
   </ul>
 </section>

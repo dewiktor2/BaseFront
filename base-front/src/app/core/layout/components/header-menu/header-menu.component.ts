@@ -1,9 +1,10 @@
-import { Component, OnInit, Renderer2 } from "@angular/core";
+import { Component, OnInit, Renderer2, Inject } from "@angular/core";
 import { Select, Store } from "@ngxs/store";
 import { Observable } from "rxjs";
 import { tap, filter } from 'rxjs/operators';
 import { RouterState } from '@common/state/router/router.state';
 import { LayoutActions } from '@common/state/layout/layout.actions';
+import { WINDOW } from '@ng-web-apis/common';
 
 @Component({
   selector: "app-header-menu",
@@ -15,13 +16,15 @@ export class HeaderMenuComponent implements OnInit {
   @Select(RouterState.navigationUrl) navigationUrl$: Observable<string>;
   toggle = false;
   currentWidth = 0;
+  
   constructor(
+    @Inject(WINDOW) private window: Window,
     private store: Store,
     private renderer2: Renderer2) {
   }
 
   ngOnInit() {
-    this.changeToggleEvent();
+    this.handleToggle();
     this.windowResizeListener();
     this.navigationUrlListener();
   }
@@ -31,23 +34,21 @@ export class HeaderMenuComponent implements OnInit {
   }
 
   windowResizeListener() {
-    this.renderer2.listen(window, 'resize', () => {
-      this.changeToggleEvent();
+    this.renderer2.listen(this.window, 'resize', () => {
+      this.handleToggle();
     })
   }
 
   navigationUrlListener() {
     this.navigationUrl$.pipe(
-      filter(() => this.toggle && window.innerWidth <= HeaderMenuComponent.HAMBURGER_TOGGLE_WIDTH),
+      filter(() => this.toggle && this.window.innerWidth <= HeaderMenuComponent.HAMBURGER_TOGGLE_WIDTH),
       tap(() => this.toggle = false)
     ).subscribe();
   }
 
-  changeToggleEvent() {
-    this.currentWidth = window.innerWidth;
-    this.toggle = window.innerWidth > HeaderMenuComponent.HAMBURGER_TOGGLE_WIDTH ? true : false;
-    if (!this.toggle) {
-      this.store.dispatch(new LayoutActions.CollapseMenu(false));
-    }
+  handleToggle() {
+    this.currentWidth = this.window.innerWidth;
+    this.toggle = this.currentWidth > HeaderMenuComponent.HAMBURGER_TOGGLE_WIDTH ? true : false;
+    !this.toggle && this.store.dispatch(new LayoutActions.CollapseMenu(false));
   }
 }

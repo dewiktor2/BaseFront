@@ -13,7 +13,11 @@
     <nz-divider *ngIf="headerMenuComponent?.currentWidth > 600" #diver [style.backgroundColor]="dividerColor"></nz-divider>
     <ng-container *ngIf="headerMenuComponent?.toggle">
       <div class="main-navigation" role="navigation">
-        <app-left-navigation [theme]="theme$ | async" [isCollapsed]="collapsed$ | async" (logout)="logout()">
+        <app-left-navigation 
+            [theme]="theme$ | async" 
+            [isCollapsed]="collapsed$ | async"
+            [menuItems]="menuItems$ | async"
+            (logout)="logout()">
         </app-left-navigation>
       </div>
     </ng-container>
