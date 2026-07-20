@@ -1,0 +1,10 @@
+<div class="header-menu">
+  @if (currentWidth <= 600) {
+    <span class="application-logo">
+      BaseFront
+    </span>
+    <div class="hamburger-container" [ngClass]="{ change: toggle }" (click)="handleToggleChange()">
+      <i class="fas fa-bars"></i>
+    </div>
+  }
+</div>

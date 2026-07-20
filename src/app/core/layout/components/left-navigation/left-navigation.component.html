@@ -1,0 +1,24 @@
+<section class="navigation-wrapper">
+  <ul [ngStyle]="menuListWidth" nz-menu nzMode="inline" nzTheme="{{theme}}" [nzInlineCollapsed]="isCollapsed">
+    <li class="menu-list-item" nz-menu-item nz-tooltip nzTooltipPlacement="right" (click)="onLogout()">
+      @if (isCollapsed) {
+        <span class="menu-icon">
+          <i class="fa fa-sign-out-alt"></i>
+        </span>
+      } @else {
+        {{ "nav.logout" | translate }}
+      }
+    </li>
+    @for (item of menuItems; track item) {
+      <li class="menu-list-item" nz-menu-item nz-tooltip nzTooltipPlacement="right" nzMatchRouter>
+        @if (isCollapsed) {
+          <a class="menu-icon" [routerLink]="[ item.url ]">
+            <i class="{{item.icon}}"></i>
+          </a>
+        } @else {
+          <a [routerLink]="[ item.url ]"> {{ item.translation | translate }} </a>
+        }
+      </li>
+    }
+  </ul>
+</section>
