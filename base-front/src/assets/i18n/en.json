@@ -1,0 +1,31 @@
+{
+    "nav": {
+        "dashboard": "Dashboard",
+        "login":"Login",
+        "logout":"Logout",
+        "usersRoles":"Users and roles",
+        "register":"Register",
+        "test":"Test"
+    },
+    "language": {
+        "changed":"Lang changed"
+    },
+    "modal": {
+        "operationConfirm":"Are you sure?",
+        "loginInfo":"Creditionals",
+        "yes":"Yes",
+        "noNeed":"Doesnt matter :)",
+        "close":"Close",
+        "cancel":"Cancel",
+        "logout":{
+            "logoutConfirmation":"Logout"
+        }     
+    },
+    "loginPage": {
+        "username":"Login",
+        "password":"Password",
+        "usernameRequired":"Login is required.",
+        "passwordRequired":"Password is required.",
+        "remindPassword":"Przypomnij hasło"
+    }
+}

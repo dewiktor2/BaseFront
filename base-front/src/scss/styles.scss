@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~font-awesome/css/font-awesome.css";
+@import "~normalize.css";
+@import "variables";
+@import "layout";
+
+// mixins
+@mixin a-link {
+  a {
+    color: $black;
+    &:hover {
+      color: $blue;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
+
+// main style
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.loading-panel {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+}
+
+.active,
+.active-link {
+  color: $blue;
+}
+
+ul {
+  li {
+    text-decoration-line: none;
+    list-style-type: none;
+    @include a-link();
+  }
+}

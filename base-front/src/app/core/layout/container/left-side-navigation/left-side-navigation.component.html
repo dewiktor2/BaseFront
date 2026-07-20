@@ -1,0 +1,25 @@
+<nav [ngClass]="menuClass">
+  <div class="left-side-navigation">
+    <span class="collapse-item" (click)="toggleCollapsed()">
+      <i nz-icon [nzType]="menuIcon"></i>
+    </span>
+    <app-header-menu></app-header-menu>
+    <div *ngIf="headerMenuComponent?.toggle" class="toggle">
+      <app-language [theme]="theme$ | async"></app-language>
+      <span class="moon-item" (click)="changeTheme()">
+        <i [ngClass]="'fas fa-moon'"></i>
+      </span>
+    </div>
+    <nz-divider *ngIf="headerMenuComponent?.currentWidth > 600" #diver [style.backgroundColor]="dividerColor"></nz-divider>
+    <ng-container *ngIf="headerMenuComponent?.toggle">
+      <div class="main-navigation" role="navigation">
+        <app-left-navigation 
+            [theme]="theme$ | async" 
+            [isCollapsed]="collapsed$ | async"
+            [menuItems]="menuItems$ | async"
+            (logout)="logout()">
+        </app-left-navigation>
+      </div>
+    </ng-container>
+  </div>
+</nav>
