@@ -25,5 +25,5 @@ jobs:
 
       - name: Install dependencies and build
         run:  |
-          npm ci
+          npm ci --legacy-peer-deps 
           npm run build
