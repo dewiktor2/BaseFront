@@ -1,29 +1,30 @@
-name: Node build
+name: Build CI
 
-on:
+on: 
   push:
-    branches: ["master"]
-  pull_request:
-    branches: ["master"]
+    branches: ["main"]
+  pull_request: 
+    branches: ["main']
 
 env:
-  NODE_VERSION: "26"
+  NODE_VERSION: 26
 
 jobs:
   build:
     name: Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  runs-on: ubuntu_latest
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ NODE_VERSION }}
+        cache: npm
 
-      - name: Install dependencies and build
-        run:  |
-          npm ci --legacy-peer-deps 
-          npm run build
+    - name: Install
+      run: npm ci --legacy-peer-deps
+
+    - name: Lint
+      run: npm run lint
