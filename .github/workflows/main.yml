@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: ./action-a
-      with:
-        MY_NAME: "Mona"
+    - name: npm install and build
+      run: |
+        npm install
+        npm run build
