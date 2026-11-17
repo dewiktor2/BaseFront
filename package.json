@@ -5,7 +5,8 @@
     "ng": "ng",
     "deploy": "ng build --configuration production --base-href /BaseFront/ && npx ngh --no-silent --dir=dist/base-front",
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "lint" : "ng lint"
   },
   "private": true,
   "dependencies": {
